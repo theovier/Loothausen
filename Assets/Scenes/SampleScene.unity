@@ -1530,6 +1530,58 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &1112988840 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1099101065718847801, guid: 4582ed650ecc05e43993b45acb3b496f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1099101066755704209}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1112988843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112988840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31851379d84302b489911e856db91d78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightComponent: {fileID: 1270665205}
+  minTimeBetweenFlickering: 5
+  maxTimeBetweenFlickering: 30
+--- !u!1 &1270665203 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1099101065871542882, guid: 4582ed650ecc05e43993b45acb3b496f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1099101066755704209}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1270665204
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270665203}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e335a7c21944f794d88e4371e748a32a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!4 &1270665205 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1099101065871542884, guid: 4582ed650ecc05e43993b45acb3b496f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1099101066755704209}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1321807201
 GameObject:
   m_ObjectHideFlags: 0
@@ -2147,6 +2199,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: street_lamp
       objectReference: {fileID: 0}
+    - target: {fileID: 1099101065871542882, guid: 4582ed650ecc05e43993b45acb3b496f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1099101065871542882, guid: 4582ed650ecc05e43993b45acb3b496f,
+        type: 3}
+      propertyPath: m_Name
+      value: light
+      objectReference: {fileID: 0}
     - target: {fileID: 1099101065718847803, guid: 4582ed650ecc05e43993b45acb3b496f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2211,6 +2273,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1099101065871542885, guid: 4582ed650ecc05e43993b45acb3b496f,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.24313726
+      objectReference: {fileID: 0}
+    - target: {fileID: 1099101065700423871, guid: 4582ed650ecc05e43993b45acb3b496f,
+        type: 3}
+      propertyPath: m_Name
+      value: head
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4582ed650ecc05e43993b45acb3b496f, type: 3}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1099101065700423870}
   - component: {fileID: 1099101065700423841}
   m_Layer: 0
-  m_Name: street_lamp_head
+  m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,8 +27,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.406, y: 6.796, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1099101065871542884}
+  m_Children: []
   m_Father: {fileID: 1099101065718847803}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -110,6 +109,7 @@ Transform:
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 1099101065700423870}
+  - {fileID: 1099101065871542884}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 1099101065871542884}
   - component: {fileID: 1099101065871542885}
   m_Layer: 0
-  m_Name: street_lamp_cone
+  m_Name: light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -187,11 +187,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1099101065871542882}
   m_LocalRotation: {x: -0, y: -0, z: 0.07378528, w: 0.99727416}
-  m_LocalPosition: {x: 0.6339998, y: -4.2, z: 0}
-  m_LocalScale: {x: 1.4747844, y: 2.3984268, z: 1.6666664}
+  m_LocalPosition: {x: 3.0399995, y: 2.596, z: 0}
+  m_LocalScale: {x: 1.4747845, y: 2.3984268, z: 1.6666663}
   m_Children: []
-  m_Father: {fileID: 1099101065700423870}
-  m_RootOrder: 0
+  m_Father: {fileID: 1099101065718847803}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 8.463}
 --- !u!212 &1099101065871542885
 SpriteRenderer:
