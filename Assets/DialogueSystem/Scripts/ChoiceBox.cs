@@ -24,6 +24,8 @@ public class ChoiceBox : MonoBehaviour {
 
     private void Awake() {
         InitAnimationValues();
+        InitButtons();
+        AddListenersToControlButtons();
     }
 
     private void InitAnimationValues() {
@@ -31,8 +33,6 @@ public class ChoiceBox : MonoBehaviour {
     }
 
     private void Start() {
-        InitButtons();
-        AddListenersToControlButtons();
         HideUpButton();
         HideDownButton();
         gameObject.SetActive(false);
