@@ -31,7 +31,6 @@ public class ChatBox : MonoBehaviour {
     private IEnumerator DeactiveAfterFade(float fadeDuration) {
         fader.FadeOut(fadeDuration);
         yield return new WaitForSeconds(fadeDuration);
-        print("deactivated");
         gameObject.SetActive(false);
     }
 
