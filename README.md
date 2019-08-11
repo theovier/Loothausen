@@ -6,3 +6,8 @@ This is a 2D point and click adventure game. The main purpose of this project is
 
 Work in progress.
 
+## Features
+- Simple dialogue system based on [xNode](https://github.com/Siccity/xNode) 
+## Screenshots
+![Screenshot_11/08/2019](https://i.ibb.co/zQ1B0k4/screenshot.png)
+
