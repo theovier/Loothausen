@@ -1206,7 +1206,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 426902342}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.278074, y: -2.2448254, z: -197.16602}
+  m_LocalPosition: {x: 5.278074, y: 0.03, z: -197.16602}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1791,6 +1791,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &612807846 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8118028646494611247, guid: 82efea88e3f48f64d9750d20e881a96c,
+    type: 3}
+  m_PrefabInstance: {fileID: 8118028644852808927}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &612807848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612807846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de01a86f51ff50749a47c06e3c8d6be1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation: {fileID: 0}
+--- !u!61 &612807849
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612807846}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.56, y: 2.56}
+    newSize: {x: 2.56, y: 2.56}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.56, y: 2.56}
+  m_EdgeRadius: 0
 --- !u!1 &643143639
 GameObject:
   m_ObjectHideFlags: 0
@@ -5617,6 +5662,56 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8438391015647744611, guid: d8ebec1ad59fca94695211f2ca70e8c3,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8438391015647744610, guid: d8ebec1ad59fca94695211f2ca70e8c3,
+        type: 3}
+      propertyPath: normal
+      value: 
+      objectReference: {fileID: 21300000, guid: 0e96466575e66b44ab8f1e3283e47ea0,
+        type: 3}
+    - target: {fileID: 8438391015647744610, guid: d8ebec1ad59fca94695211f2ca70e8c3,
+        type: 3}
+      propertyPath: talk
+      value: 
+      objectReference: {fileID: 21300000, guid: 171017229628f6649973d46897bc80ab,
+        type: 3}
+    - target: {fileID: 8438391015647744610, guid: d8ebec1ad59fca94695211f2ca70e8c3,
+        type: 3}
+      propertyPath: defaultCursor
+      value: 
+      objectReference: {fileID: 21300000, guid: 0e96466575e66b44ab8f1e3283e47ea0,
+        type: 3}
+    - target: {fileID: 8438391015647744610, guid: d8ebec1ad59fca94695211f2ca70e8c3,
+        type: 3}
+      propertyPath: talkCursor
+      value: 
+      objectReference: {fileID: 21300000, guid: 171017229628f6649973d46897bc80ab,
+        type: 3}
+    - target: {fileID: 8438391015647744610, guid: d8ebec1ad59fca94695211f2ca70e8c3,
+        type: 3}
+      propertyPath: talkCursorScale.x
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 8438391015647744610, guid: d8ebec1ad59fca94695211f2ca70e8c3,
+        type: 3}
+      propertyPath: talkCursorScale.y
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8438391015647744608, guid: d8ebec1ad59fca94695211f2ca70e8c3,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0e96466575e66b44ab8f1e3283e47ea0,
+        type: 3}
+    - target: {fileID: 8438391015647744614, guid: d8ebec1ad59fca94695211f2ca70e8c3,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8ebec1ad59fca94695211f2ca70e8c3, type: 3}

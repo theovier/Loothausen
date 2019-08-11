@@ -1,4 +1,5 @@
-﻿using Dialogue;
+﻿using System;
+using Dialogue;
 using UnityEngine;
 
 public class TalkableTo : MonoBehaviour {
