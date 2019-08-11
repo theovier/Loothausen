@@ -36,7 +36,7 @@ public class ChatBox : MonoBehaviour {
 
 
     public bool IsVisible() {
-        return !hidden;
+        return !hidden && gameObject.activeSelf;
     }
     
 }
