@@ -29,7 +29,6 @@ obj/
 *.pidb.meta
 sysinfo.txt
 Logs/
-Packages/
 
 # ============ #
 # OS generated #
