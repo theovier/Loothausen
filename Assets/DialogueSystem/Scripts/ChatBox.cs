@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Runtime.Remoting.Messaging;
 using TMPro;
 using UnityEngine;
 
@@ -23,6 +24,7 @@ public class ChatBox : MonoBehaviour {
     }
 
     public void Hide() {
+        if (!IsVisible()) return;
         StartCoroutine(DeactiveAfterFade(0.1f));
         textField.text = "";
         hidden = true;

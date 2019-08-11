@@ -29,6 +29,7 @@ public class DialogueManager : MonoBehaviour {
         active = true;
         dialogueGraph = dialogue;
         dialogueGraph.Restart();
+        choicebox.Reset();
         ContinueDialogue();
     }
     
