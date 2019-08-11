@@ -1,5 +1,204 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7095805963620513486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa1b4d434c8967e48b84afb24592b2e6, type: 3}
+  m_Name: Chat
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1704, y: -952}
+  ports:
+    keys:
+    - choices
+    - input
+    - output
+    values:
+    - _fieldName: choices
+      _node: {fileID: -7095805963620513486}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogue.Chat+Choice,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: input
+      _node: {fileID: -7095805963620513486}
+      _typeQualifiedName: Dialogue.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: choices 0
+        node: {fileID: 3103682718266233960}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: -7095805963620513486}
+      _typeQualifiedName: Dialogue.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  character: {fileID: 0}
+  text: Ich freue mich, dass du das fragst. Magie. Aber die Demo ist nun auch vorbei.
+    Komm doch bald wieder.
+  choices: []
+--- !u!114 &-3781422425174011632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa1b4d434c8967e48b84afb24592b2e6, type: 3}
+  m_Name: Chat
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1736, y: -664}
+  ports:
+    keys:
+    - choices
+    - input
+    - output
+    - choices 0
+    - choices 1
+    values:
+    - _fieldName: choices
+      _node: {fileID: -3781422425174011632}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogue.Chat+Choice,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: input
+      _node: {fileID: -3781422425174011632}
+      _typeQualifiedName: Dialogue.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: choices 1
+        node: {fileID: 3103682718266233960}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: -3781422425174011632}
+      _typeQualifiedName: Dialogue.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: choices 0
+      _node: {fileID: -3781422425174011632}
+      _typeQualifiedName: Dialogue.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: 3855094608080140131}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: choices 1
+      _node: {fileID: -3781422425174011632}
+      _typeQualifiedName: Dialogue.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: -3566342577475741018}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+  input: {fileID: 0}
+  output: {fileID: 0}
+  character: {fileID: 0}
+  text: Ja, oder?
+  choices:
+  - text: Ja!
+    voiceClip: {fileID: 0}
+  - text: Ne, nicht wirklich...
+    voiceClip: {fileID: 0}
+--- !u!114 &-3566342577475741018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa1b4d434c8967e48b84afb24592b2e6, type: 3}
+  m_Name: Chat
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1192, y: -520}
+  ports:
+    keys:
+    - choices
+    - input
+    - output
+    values:
+    - _fieldName: choices
+      _node: {fileID: -3566342577475741018}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogue.Chat+Choice,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: input
+      _node: {fileID: -3566342577475741018}
+      _typeQualifiedName: Dialogue.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: choices 1
+        node: {fileID: -3781422425174011632}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: -3566342577475741018}
+      _typeQualifiedName: Dialogue.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  character: {fileID: 0}
+  text: "Tja... Gl\xFCck gehabt, die Demo ist zuende."
+  choices: []
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14,7 +213,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodes:
   - {fileID: 3103682718266233960}
-  current: {fileID: 0}
+  - {fileID: -7095805963620513486}
+  - {fileID: -3781422425174011632}
+  - {fileID: -3566342577475741018}
+  - {fileID: 3855094608080140131}
+  current: {fileID: 3103682718266233960}
 --- !u!114 &3103682718266233960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28,7 +231,7 @@ MonoBehaviour:
   m_Name: Chat
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -2156.8845, y: -804.44836}
+  position: {x: -2264, y: -840}
   ports:
     keys:
     - choices
@@ -36,6 +239,8 @@ MonoBehaviour:
     - output
     - choices 0
     - choices 1
+    - choices 2
+    - choices 3
     values:
     - _fieldName: choices
       _node: {fileID: 3103682718266233960}
@@ -69,12 +274,36 @@ MonoBehaviour:
       _node: {fileID: 3103682718266233960}
       _typeQualifiedName: Dialogue.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: input
+        node: {fileID: -7095805963620513486}
+        reroutePoints: []
       _direction: 1
       _connectionType: 1
       _typeConstraint: 0
       _dynamic: 1
     - _fieldName: choices 1
+      _node: {fileID: 3103682718266233960}
+      _typeQualifiedName: Dialogue.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: input
+        node: {fileID: -3781422425174011632}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: choices 2
+      _node: {fileID: 3103682718266233960}
+      _typeQualifiedName: Dialogue.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: choices 3
       _node: {fileID: 3103682718266233960}
       _typeQualifiedName: Dialogue.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
@@ -86,9 +315,69 @@ MonoBehaviour:
   input: {fileID: 0}
   output: {fileID: 0}
   character: {fileID: 0}
-  text: Hello! This is the dialogue System.
+  text: Hallo, das ist das neue Dialog-System!
   choices:
-  - text: Awesome!
+  - text: Wie funktioniert es?
     voiceClip: {fileID: 0}
-  - text: Sweet!
+  - text: "H\xF6rt sich gut an!"
     voiceClip: {fileID: 0}
+  - text: "Kein Interesse. Tsch\xFCss."
+    voiceClip: {fileID: 0}
+  - text: "Ich hab keine Zeit daf\xFCr. Cu."
+    voiceClip: {fileID: 0}
+--- !u!114 &3855094608080140131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa1b4d434c8967e48b84afb24592b2e6, type: 3}
+  m_Name: Chat
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1256, y: -728}
+  ports:
+    keys:
+    - choices
+    - input
+    - output
+    values:
+    - _fieldName: choices
+      _node: {fileID: 3855094608080140131}
+      _typeQualifiedName: System.Collections.Generic.List`1[[Dialogue.Chat+Choice,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: input
+      _node: {fileID: 3855094608080140131}
+      _typeQualifiedName: Dialogue.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: choices 0
+        node: {fileID: -3781422425174011632}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: 3855094608080140131}
+      _typeQualifiedName: Dialogue.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  character: {fileID: 0}
+  text: Ich mag es auch total, aber die Demo ist jetzt vorbei.
+  choices: []
