@@ -1,6 +1,4 @@
-﻿using System;
-using UnityEngine;
-using UnityEngine.Serialization;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class MouseCursor : MonoBehaviour {
@@ -13,14 +11,17 @@ public class MouseCursor : MonoBehaviour {
     
     public Vector2 talkCursorScale = new Vector2(17, 15);
     public Vector2 talkCursorRotation;
+    public LayerMask layerMask;
     
     private Image current;
     private RectTransform rectTransform;
     private CursorStyle currentStyle;
+    private Camera mainCamera;
 
     private void Awake() {
         current = GetComponent<Image>();
         rectTransform = GetComponent<RectTransform>();
+        mainCamera = Camera.main;
     }
 
     private void Start() {
@@ -29,25 +30,51 @@ public class MouseCursor : MonoBehaviour {
     }
     
     private void Update() {
+        UpdateCursorPosition();
+        UpdateCursorStyle();
+    }
+
+    private void UpdateCursorPosition() {
         transform.position = Input.mousePosition;
-        
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); //expensive call
-        RaycastHit2D hit = Physics2D.Raycast (ray.origin, ray.direction, Mathf.Infinity);
-        if (hit.collider != null) {
-            SetTalkStyle();
-        }
-        else if (currentStyle != CursorStyle.Normal) {
-            SetNormalStyle();
+    }
+
+    private void UpdateCursorStyle() {
+        var hit = RaycastFromMouse();
+        if (hit) {
+            ChangeStyle(hit.collider.tag);
+        } else {
+            ChangeStyle(CursorStyle.Normal);
         }
     }
+
+    private RaycastHit2D RaycastFromMouse() {
+        var ray = mainCamera.ScreenPointToRay(Input.mousePosition); 
+        return Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity, layerMask);
+    }
     
-    private void OnApplicationFocus( bool focusStatus ) {
+    private void OnApplicationFocus(bool focusStatus) {
         if (focusStatus) {
             Cursor.visible = false;
         }
     }
+
+    private void ChangeStyle(string raycastHitTag) {
+        switch (raycastHitTag) {
+            case "Talk": {
+                ChangeStyle(CursorStyle.Talk);
+                break;
+            }
+            default: {
+                ChangeStyle(CursorStyle.Normal);
+                break;
+            }
+        }
+    }
     
     private void ChangeStyle(CursorStyle style) {
+        if (currentStyle == style) {
+            return;
+        }
         switch (style) {
             case CursorStyle.Normal:
                 SetNormalStyle();

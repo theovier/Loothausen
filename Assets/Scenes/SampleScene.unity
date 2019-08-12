@@ -5533,6 +5533,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: moon
       objectReference: {fileID: 0}
+    - target: {fileID: 8118028646494611247, guid: 82efea88e3f48f64d9750d20e881a96c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8118028646494611247, guid: 82efea88e3f48f64d9750d20e881a96c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Talk
+      objectReference: {fileID: 0}
+    - target: {fileID: 8118028645825844792, guid: 82efea88e3f48f64d9750d20e881a96c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 8118028646494611245, guid: 82efea88e3f48f64d9750d20e881a96c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5755,6 +5770,16 @@ PrefabInstance:
         type: 3}
       propertyPath: talkCursorScale.y
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8438391015647744610, guid: d8ebec1ad59fca94695211f2ca70e8c3,
+        type: 3}
+      propertyPath: interactableLayer.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 8438391015647744610, guid: d8ebec1ad59fca94695211f2ca70e8c3,
+        type: 3}
+      propertyPath: layerMask.m_Bits
+      value: 512
       objectReference: {fileID: 0}
     - target: {fileID: 8438391015647744608, guid: d8ebec1ad59fca94695211f2ca70e8c3,
         type: 3}
