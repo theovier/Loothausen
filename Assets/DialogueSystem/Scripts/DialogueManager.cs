@@ -71,7 +71,7 @@ public class DialogueManager : MonoBehaviour {
                         ContinueDialogue();
                     }
                     else {
-                        chatbox.Hide();
+                        EndDialogue();
                     }
                 }
             }
