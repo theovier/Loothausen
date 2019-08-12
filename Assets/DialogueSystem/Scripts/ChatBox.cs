@@ -12,10 +12,12 @@ public class ChatBox : MonoBehaviour {
     private bool hidden;
 
     private void Start() {
+        //Only called on active component. So make sure the component is active at the beginning of the scene.
         gameObject.SetActive(false);
     }
 
     public void Show(string text) {
+        print("show");
         gameObject.SetActive(true);
         textField.text = text;
         adjuster.AdjustChatbox(textField.preferredHeight);
