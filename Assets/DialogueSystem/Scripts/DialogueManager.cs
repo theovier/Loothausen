@@ -6,11 +6,10 @@ public class DialogueManager : MonoBehaviour {
 
     public ChatBox chatbox;
     public ChoiceBox choicebox;
-    
+
     private DialogueGraph dialogueGraph;
     private Chat currentChat;
     private bool active;
-    
     
     private static DialogueManager instance;
     public static DialogueManager Instance => instance;
@@ -26,6 +25,7 @@ public class DialogueManager : MonoBehaviour {
     }
 
     public void StartDialogue(DialogueGraph dialogue) {
+        if (active) return;
         active = true;
         dialogueGraph = dialogue;
         dialogueGraph.Restart();
