@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//taken from https://www.youtube.com/watch?v=92Fz3BjjPL8 by Omnirift
 public class UIFader : MonoBehaviour {
 
     public CanvasGroup uiElement;
