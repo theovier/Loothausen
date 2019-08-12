@@ -4135,6 +4135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chatbox: {fileID: 235086197}
   choicebox: {fileID: 1214235131}
+  displayName: {fileID: 1339204642}
 --- !u!4 &1749271343
 Transform:
   m_ObjectHideFlags: 0
@@ -4725,6 +4726,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_sharedMaterial
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2837271557836572576, guid: e104bce8c36ea904b8549a89b978a495,
+        type: 3}
+      propertyPath: m_padding
+      value: 4.85
       objectReference: {fileID: 0}
     - target: {fileID: 3776978494707877883, guid: e104bce8c36ea904b8549a89b978a495,
         type: 3}

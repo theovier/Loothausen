@@ -1,7 +1,7 @@
 ﻿using Dialogue;
 using UnityEngine;
 
-public class TalkableTo : MonoBehaviour {
+public class TriggerDialogue : MonoBehaviour {
     
     public DialogueGraph conversation;
     
