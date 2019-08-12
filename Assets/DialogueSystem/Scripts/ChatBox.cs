@@ -17,7 +17,6 @@ public class ChatBox : MonoBehaviour {
     }
 
     public void Show(string text) {
-        print("show");
         gameObject.SetActive(true);
         textField.text = text;
         adjuster.AdjustChatbox(textField.preferredHeight);
