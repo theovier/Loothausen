@@ -1,18 +1,19 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class FlickeringLight : MonoBehaviour {
+public class StreetLampFlickerLight : MonoBehaviour {
 
-
+    
     public Component lightComponent;
     public float minTimeBetweenFlickering = 5;
     public float maxTimeBetweenFlickering = 25;
-    
+    public SpriteRenderer head;
     
     private Animator animator;
     private RuntimeAnimatorController animController;
     private float flickeringAnimDuration;
     private float timeBetweenFlickering;
+    
     
     void Start() {
         animator = lightComponent.GetComponent<Animator>();
@@ -45,4 +46,14 @@ public class FlickeringLight : MonoBehaviour {
     private float RandomFlickeringTime() {
         return Random.Range(flickeringAnimDuration + minTimeBetweenFlickering, maxTimeBetweenFlickering);
     }
+
+    public void HideLampHead() {
+        head.gameObject.SetActive(false);
+    }
+
+    public void ShowLampHead() {
+        head.gameObject.SetActive(true);
+    }
+    
+    
 }
