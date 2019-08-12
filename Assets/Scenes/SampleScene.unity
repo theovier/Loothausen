@@ -3173,6 +3173,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textField: {fileID: 1339204639}
   fader: {fileID: 1339204643}
+  fadeInDuration: 0.1
+  fadeOutDuration: 0.1
 --- !u!114 &1339204643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4878,10 +4880,45 @@ PrefabInstance:
       propertyPath: m_textInfo.wordCount
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 127644235986677570, guid: 72d1324a3dc4ccb4bbf1ef45d6804b90,
+        type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 127644235986677570, guid: 72d1324a3dc4ccb4bbf1ef45d6804b90,
+        type: 3}
+      propertyPath: m_IgnoreParentGroups
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 127644235986677570, guid: 72d1324a3dc4ccb4bbf1ef45d6804b90,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 127644235986677570, guid: 72d1324a3dc4ccb4bbf1ef45d6804b90,
+        type: 3}
+      propertyPath: m_BlocksRaycasts
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 127644237324740487, guid: 72d1324a3dc4ccb4bbf1ef45d6804b90,
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 127644237324740487, guid: 72d1324a3dc4ccb4bbf1ef45d6804b90,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 127644237324740487, guid: 72d1324a3dc4ccb4bbf1ef45d6804b90,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 127644237324740487, guid: 72d1324a3dc4ccb4bbf1ef45d6804b90,
+        type: 3}
+      propertyPath: m_padding
+      value: 4.85
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72d1324a3dc4ccb4bbf1ef45d6804b90, type: 3}

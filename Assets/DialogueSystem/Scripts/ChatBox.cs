@@ -25,18 +25,15 @@ public class ChatBox : MonoBehaviour {
 
     public void Hide() {
         if (!IsVisible()) return;
-        StartCoroutine(DeactiveAfterFade(0.1f));
-        textField.text = "";
         hidden = true;
+        fader.FadeOut(0.1f, OnFadeOutCompleted);
+        textField.text = "";
     }
-    
-    private IEnumerator DeactiveAfterFade(float fadeDuration) {
-        fader.FadeOut(fadeDuration);
-        yield return new WaitForSeconds(fadeDuration);
+
+    private void OnFadeOutCompleted() {
         gameObject.SetActive(false);
     }
-
-
+    
     public bool IsVisible() {
         return !hidden && gameObject.activeSelf;
     }

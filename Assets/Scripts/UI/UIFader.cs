@@ -6,16 +6,25 @@ using UnityEngine;
 public class UIFader : MonoBehaviour {
 
     public CanvasGroup uiElement;
-
+    public delegate void OnCompletion();
+    
     public void FadeIn(float duration) {
         StartCoroutine(FadeCanvasGroup(uiElement, uiElement.alpha, 1, duration));
     }
-
+    
+    public void FadeIn(float duration, OnCompletion onCompletion) {
+        StartCoroutine(FadeCanvasGroup(uiElement, uiElement.alpha, 1, duration, onCompletion));
+    }
+    
     public void FadeOut(float duration) {
         StartCoroutine(FadeCanvasGroup(uiElement, uiElement.alpha, 0, duration));
     }
-
-    public IEnumerator FadeCanvasGroup(CanvasGroup cg, float start, float end, float lerpTime = 1) {
+    
+    public void FadeOut(float duration, OnCompletion onCompletion) {
+        StartCoroutine(FadeCanvasGroup(uiElement, uiElement.alpha, 0, duration, onCompletion));
+    }
+    
+    private IEnumerator FadeCanvasGroup(CanvasGroup cg, float start, float end, float lerpTime) {
         float _timeStartedLerping = Time.time;
         float timeSinceStarted = Time.time - _timeStartedLerping;
         float percentageComplete = timeSinceStarted / lerpTime;
@@ -33,5 +42,10 @@ public class UIFader : MonoBehaviour {
 
             yield return new WaitForFixedUpdate();
         }
+    }
+
+    private IEnumerator FadeCanvasGroup(CanvasGroup cg, float start, float end, float lerpTime, OnCompletion onCompletion) {
+        yield return FadeCanvasGroup(cg, start, end, lerpTime);
+        onCompletion();
     }
 }

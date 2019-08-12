@@ -26,12 +26,10 @@ public class NameDisplayController : MonoBehaviour {
     public void Hide() {
         if (!IsVisible()) return;
         hidden = true;
-        StartCoroutine(DeactiveAfterFade(fadeOutDuration));
+        fader.FadeOut(fadeOutDuration, OnFadeOutCompleted);
     }
     
-    private IEnumerator DeactiveAfterFade(float fadeDuration) {
-        fader.FadeOut(fadeDuration);
-        yield return new WaitForSeconds(fadeDuration);
+    private void OnFadeOutCompleted() {
         gameObject.SetActive(false);
     }
     
