@@ -6,7 +6,8 @@ public class DialogueManager : MonoBehaviour {
 
     public ChatBox chatbox;
     public ChoiceBox choicebox;
-
+    public NameDisplayController displayName;
+    
     private DialogueGraph dialogueGraph;
     private Chat currentChat;
     private bool active;
@@ -30,6 +31,7 @@ public class DialogueManager : MonoBehaviour {
         dialogueGraph = dialogue;
         dialogueGraph.Restart();
         choicebox.Reset();
+        displayName.Hide();
         ContinueDialogue();
     }
     
