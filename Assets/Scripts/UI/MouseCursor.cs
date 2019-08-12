@@ -5,12 +5,17 @@ public class MouseCursor : MonoBehaviour {
 
     public Sprite defaultCursor;
     public Sprite talkCursor;
+    public Sprite inspectCursor;
     
     public Vector2 defaultCursorScale = new Vector2(13, 17);
     public Vector2 defaultCursorRotation = new Vector2(0, 20);
     
     public Vector2 talkCursorScale = new Vector2(17, 15);
     public Vector2 talkCursorRotation;
+    
+    public Vector2 inspectCursorScale = new Vector2(13, 13);
+    public Vector2 inspectCursorRotation;
+    
     public LayerMask layerMask;
     
     private Image current;
@@ -64,6 +69,10 @@ public class MouseCursor : MonoBehaviour {
                 ChangeStyle(CursorStyle.Talk);
                 break;
             }
+            case "Inspect": {
+                ChangeStyle(CursorStyle.Inspect);
+                break;
+            }
             default: {
                 ChangeStyle(CursorStyle.Normal);
                 break;
@@ -81,6 +90,9 @@ public class MouseCursor : MonoBehaviour {
                 break;
             case CursorStyle.Talk:
                 SetTalkStyle();
+                break;
+            case CursorStyle.Inspect:
+                SetInspectStyle();
                 break;
             default:
                 SetNormalStyle();
@@ -101,10 +113,18 @@ public class MouseCursor : MonoBehaviour {
         rectTransform.localRotation = Quaternion.Euler(0, talkCursorRotation.x, talkCursorRotation.y);
         rectTransform.localScale = new Vector3(talkCursorScale.x, talkCursorScale.y, 0);
     }
+
+    private void SetInspectStyle() {
+        currentStyle = CursorStyle.Inspect;
+        current.sprite = inspectCursor;
+        rectTransform.localRotation = Quaternion.Euler(0, inspectCursorRotation.x, inspectCursorRotation.y);
+        rectTransform.localScale = new Vector3(inspectCursorScale.x, inspectCursorScale.y, 0);
+    }
     
 }
 
 public enum CursorStyle {
     Normal,
-    Talk
+    Talk,
+    Inspect
 }
