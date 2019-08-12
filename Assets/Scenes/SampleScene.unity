@@ -618,7 +618,7 @@ GameObject:
   m_Component:
   - component: {fileID: 308272676}
   m_Layer: 0
-  m_Name: house_left
+  m_Name: windows_house_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2911,7 +2911,7 @@ GameObject:
   - component: {fileID: 920586822}
   - component: {fileID: 920586823}
   m_Layer: 0
-  m_Name: hills_houses_bg_02
+  m_Name: background_houses_blurred
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2971,7 +2971,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -5
-  m_Sprite: {fileID: 21300000, guid: f1e1b32c16aae7a459b16437d411cf33, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 66a0248fb19e59e4bab39eefc3ea706e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3278,7 +3278,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1036154783}
   m_Layer: 0
-  m_Name: house_right
+  m_Name: windows_house_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3412,7 +3412,7 @@ GameObject:
   - component: {fileID: 1069095182}
   - component: {fileID: 1069095181}
   m_Layer: 0
-  m_Name: hills_01
+  m_Name: hills
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
