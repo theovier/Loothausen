@@ -29,12 +29,12 @@ public class StreetLampFlickerLight : MonoBehaviour {
     private IEnumerator LoopLightChange() {
         while (true) {
             if (isLightOn) {
+                yield return new WaitForSeconds(LightsOnTime());
                 TurnOffLights();
-                yield return new WaitForSeconds(LightsOffTime());
             }
             else {
+                yield return new WaitForSeconds(LightsOffTime());
                 TurnOnLights();
-                yield return new WaitForSeconds(LightsOnTime());
             }
         }
     }

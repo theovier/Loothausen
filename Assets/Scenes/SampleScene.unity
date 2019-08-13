@@ -3521,13 +3521,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightComponent: {fileID: 1270665206}
-  minTimeLightsOff: 5
-  maxTimeLightsOff: 5
+  minTimeLightsOff: 3
+  maxTimeLightsOff: 15
   minTimeLightsOn: 5
-  maxTimeLightsOn: 5
+  maxTimeLightsOn: 25
   lightsOnHead: {fileID: 527917795}
-  turnLightsOff: {fileID: 7400000, guid: 343e7761672377340b45399dd47cbf38, type: 2}
-  turnLightsOn: {fileID: 7400000, guid: e376ec71aebf1a443b43426305128edd, type: 2}
 --- !u!1 &1288811815
 GameObject:
   m_ObjectHideFlags: 0
