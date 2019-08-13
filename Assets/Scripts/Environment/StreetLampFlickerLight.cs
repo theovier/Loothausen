@@ -1,59 +1,69 @@
 ﻿using System.Collections;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class StreetLampFlickerLight : MonoBehaviour {
+    
+    public SpriteRenderer lightComponent;
+    public float minTimeLightsOff = 5;
+    public float maxTimeLightsOff = 25;
+    public float minTimeLightsOn = 5;
+    public float maxTimeLightsOn = 25;
+    public SpriteRenderer lightsOnHead;
 
-    
-    public Component lightComponent;
-    public float minTimeBetweenFlickering = 5;
-    public float maxTimeBetweenFlickering = 25;
-    public SpriteRenderer head;
-    
     private Animator animator;
-    private RuntimeAnimatorController animController;
-    private float flickeringAnimDuration;
-    private float timeBetweenFlickering;
-    
-    
-    void Start() {
-        animator = lightComponent.GetComponent<Animator>();
-        animController = animator.runtimeAnimatorController;
-        flickeringAnimDuration = getAnimationDuration("street_lamp_flickering");
-        timeBetweenFlickering = RandomFlickeringTime();
-        StartCoroutine(scheduleFlickeringAnimation(timeBetweenFlickering));
+    private bool isLightOn;
+
+    private void Awake() {
+        Init();
     }
 
-    private float getAnimationDuration(string name) {
-        foreach (var clip in animController.animationClips) {
-            if (clip.name.Equals(name)) {
-                return clip.length;
+    private void Init() {
+        animator = lightComponent.GetComponent<Animator>();
+    }
+    
+    private void Start() {
+        StartCoroutine(LoopLightChange());
+    }
+
+    private IEnumerator LoopLightChange() {
+        while (true) {
+            if (isLightOn) {
+                TurnOffLights();
+                yield return new WaitForSeconds(LightsOffTime());
+            }
+            else {
+                TurnOnLights();
+                yield return new WaitForSeconds(LightsOnTime());
             }
         }
-        return -1;
+    }
+
+    private void TurnOnLights() {
+        isLightOn = true;
+        animator.SetBool("isOn", isLightOn);
+    }
+
+    private void TurnOffLights() {
+        isLightOn = false;
+        animator.SetBool("isOn", isLightOn);
     }
     
-    IEnumerator scheduleFlickeringAnimation(float wait) {
-        yield return new WaitForSeconds(wait);
-        startFlickeringAnimation();
+    private float LightsOnTime() {
+        return Random.Range(minTimeLightsOn, maxTimeLightsOn);
     }
 
-    private void startFlickeringAnimation() {
-        animator.SetTrigger("flickerTrigger");
-        timeBetweenFlickering = RandomFlickeringTime();
-        StartCoroutine(scheduleFlickeringAnimation(timeBetweenFlickering));
+    private float LightsOffTime() {
+        return Random.Range(minTimeLightsOff, maxTimeLightsOff);
     }
 
-    private float RandomFlickeringTime() {
-        return Random.Range(flickeringAnimDuration + minTimeBetweenFlickering, maxTimeBetweenFlickering);
+    //set via animation
+    public void HideLightsOnHead() {
+        lightsOnHead.enabled = false;
     }
 
-    public void HideLampHead() {
-        head.gameObject.SetActive(false);
+    //set via animation
+    public void ShowLightsOnHead() {
+        lightsOnHead.enabled = true;
     }
-
-    public void ShowLampHead() {
-        head.gameObject.SetActive(true);
-    }
-    
-    
 }
