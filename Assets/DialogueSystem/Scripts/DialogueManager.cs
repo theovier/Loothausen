@@ -60,8 +60,7 @@ public class DialogueManager : MonoBehaviour {
     
     private void Update() {
         if (Input.GetKeyDown(KeyCode.Mouse0)) {
-            if (chatbox.IsVisible() && active) {
-                chatbox.Hide();
+            if (active) {
                 if (currentChat.OffersChoices()){
                     DisplayChoices(currentChat.choices);
                 }
