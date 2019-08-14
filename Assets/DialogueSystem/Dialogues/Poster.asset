@@ -65,6 +65,6 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
-  character: {fileID: 0}
+  character: {fileID: 11400000, guid: 11434f49b283b9341ae7e16fa652c409, type: 2}
   text: Willst du ein wenig Spass? Dann ruf 0900666666 an!
   choices: []

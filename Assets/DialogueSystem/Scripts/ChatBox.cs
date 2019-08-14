@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using Dialogue;
+using TMPro;
 using UnityEngine;
 
 public class ChatBox : MonoBehaviour {
@@ -14,9 +15,10 @@ public class ChatBox : MonoBehaviour {
         gameObject.SetActive(false);
     }
 
-    public void Show(string text) {
+    public void Show(Chat chat) {
         gameObject.SetActive(true);
-        textField.text = text;
+        textField.text = chat.text;
+        textField.color = chat.character.color;
         adjuster.AdjustChatbox(textField.preferredHeight);
         fader.FadeIn(0.1f);
         hidden = false;

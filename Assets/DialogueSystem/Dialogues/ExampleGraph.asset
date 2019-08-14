@@ -53,7 +53,7 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
-  character: {fileID: 0}
+  character: {fileID: 11400000, guid: 05254f6fa140c1f45adf267832526968, type: 2}
   text: Ich freue mich, dass du das fragst. Magie. Aber die Demo ist nun auch vorbei.
     Komm doch bald wieder.
   choices: []
@@ -136,7 +136,7 @@ MonoBehaviour:
       _dynamic: 1
   input: {fileID: 0}
   output: {fileID: 0}
-  character: {fileID: 0}
+  character: {fileID: 11400000, guid: 05254f6fa140c1f45adf267832526968, type: 2}
   text: Ja, oder?
   choices:
   - text: Ja!
@@ -196,7 +196,7 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
-  character: {fileID: 0}
+  character: {fileID: 11400000, guid: 05254f6fa140c1f45adf267832526968, type: 2}
   text: "Tja... Gl\xFCck gehabt, die Demo ist zuende."
   choices: []
 --- !u!114 &11400000
@@ -314,7 +314,7 @@ MonoBehaviour:
       _dynamic: 1
   input: {fileID: 0}
   output: {fileID: 0}
-  character: {fileID: 0}
+  character: {fileID: 11400000, guid: 05254f6fa140c1f45adf267832526968, type: 2}
   text: Hallo, das ist das neue Dialog-System!
   choices:
   - text: Wie funktioniert es?
@@ -378,6 +378,6 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
-  character: {fileID: 0}
+  character: {fileID: 11400000, guid: 05254f6fa140c1f45adf267832526968, type: 2}
   text: Ich mag es auch total, aber die Demo ist jetzt vorbei.
   choices: []

@@ -50,7 +50,7 @@ MonoBehaviour:
       _dynamic: 0
   input: {fileID: 0}
   output: {fileID: 0}
-  character: {fileID: 0}
+  character: {fileID: 11400000, guid: 11434f49b283b9341ae7e16fa652c409, type: 2}
   text: "Uh... Das stinkt aber \xFCbel..."
   choices: []
 --- !u!114 &11400000
@@ -67,4 +67,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodes:
   - {fileID: -2578729007881735532}
-  current: {fileID: 0}
+  current: {fileID: -2578729007881735532}

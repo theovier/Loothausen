@@ -45,12 +45,12 @@ public class DialogueManager : MonoBehaviour {
         if (!active) return;
         //display the next chat
         currentChat = dialogueGraph.current; // while giving answer the current of the graph is updated
-        DisplayChat(currentChat.text);
+        DisplayChat();
     }
     
-    private void DisplayChat(string text) {
+    private void DisplayChat() {
         choicebox.Hide();
-        chatbox.Show(text);
+        chatbox.Show(currentChat);
     }
 
     private void DisplayChoices(List<Chat.Choice> choices) {
