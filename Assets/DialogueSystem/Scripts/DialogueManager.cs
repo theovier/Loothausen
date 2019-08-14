@@ -59,24 +59,25 @@ public class DialogueManager : MonoBehaviour {
     }
     
     private void Update() {
+        if (!active) return;
         if (Input.GetKeyDown(KeyCode.Mouse0)) {
-            if (active) {
-                if (currentChat.OffersChoices()){
-                    DisplayChoices(currentChat.choices);
-                }
-                else {
-                    if (currentChat.HasSuccessors()) {
-                        currentChat.TriggerNext();
-                        ContinueDialogue();
-                    }
-                    else {
-                        EndDialogue();
-                    }
-                }
-            }
+            HandleDialogueInteraction();
         }
     }
-    
+
+    private void HandleDialogueInteraction() {
+        if (currentChat.OffersChoices()){
+            DisplayChoices(currentChat.choices);
+        }
+        else if (currentChat.HasSuccessors()) {
+            currentChat.TriggerNext();
+            ContinueDialogue();
+        }
+        else {
+            EndDialogue();
+        }
+    }
+
     private void OnChoiceSelected(int index) {
         if (currentChat.GiveAnswer(index)) {
             ContinueDialogue();
