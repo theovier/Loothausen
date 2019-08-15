@@ -16,7 +16,7 @@ namespace Dialogue {
         
         
         /// <summary> Triggers the (only) successor node in case no choices were given </summary>
-        public void TriggerNext() {
+        public void TriggerSuccessors() {
             if (OffersChoices()) {
                 return;
             }

@@ -34,7 +34,7 @@ public class DialogueManager : MonoBehaviour {
         dialogueGraph.Restart();
         choicebox.Reset();
         displayName.Hide();
-        ContinueDialogue();
+        DisplayCurrentChat();
     }
     
     private void EndDialogue() {
@@ -43,14 +43,9 @@ public class DialogueManager : MonoBehaviour {
         choicebox.Reset();
     }
     
-    private void ContinueDialogue() {
+    private void DisplayCurrentChat() {
         if (!active) return;
-        //display the next chat; while giving answer the current of the graph is updated
         currentChat = dialogueGraph.current;
-        DisplayChat();
-    }
-    
-    private void DisplayChat() {
         choicebox.Hide();
         chatbox.Show(currentChat);
         scheduledChatSkip = StartCoroutine(ContinueDialogueAfterWait(2.0f));
@@ -58,7 +53,7 @@ public class DialogueManager : MonoBehaviour {
 
     private IEnumerator ContinueDialogueAfterWait(float duration) {
         yield return new WaitForSeconds(duration);
-        HandleDialogueInteraction();
+        ContinueDialogue();
     } 
 
     private void DisplayChoices(List<Chat.Choice> choices) {
@@ -70,19 +65,19 @@ public class DialogueManager : MonoBehaviour {
         if (!active) return;
         if (choicebox.IsVisible()) return;
         if (Input.GetKeyDown(KeyCode.Mouse0)) {
-            HandleDialogueInteraction();
+            ContinueDialogue();
         }
     }
 
-    private void HandleDialogueInteraction() {
+    private void ContinueDialogue() {
         StopCoroutine(scheduledChatSkip);
         
         if (currentChat.OffersChoices()){
             DisplayChoices(currentChat.choices);
         }
         else if (currentChat.HasSuccessors()) {
-            currentChat.TriggerNext();
-            ContinueDialogue();
+            currentChat.TriggerSuccessors();
+            DisplayCurrentChat();
         }
         else {
             EndDialogue();
@@ -91,6 +86,6 @@ public class DialogueManager : MonoBehaviour {
 
     private void OnChoiceSelected(int index) {
         currentChat.SelectChoice(index);
-        ContinueDialogue();
+        DisplayCurrentChat();
     }
 }
