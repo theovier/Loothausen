@@ -5,5 +5,9 @@ namespace Dialogue {
     
     public class CharacterInfo : ScriptableObject {
         public Color color;
+
+        public static CharacterInfo PlayerCharacterInfo() {
+            return Resources.Load<CharacterInfo>("DialogueSystem/Characters/Player");
+        }
     }
 }

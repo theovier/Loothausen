@@ -38,6 +38,12 @@ MonoBehaviour:
       - fieldName: choices 0
         node: {fileID: 3103682718266233960}
         reroutePoints: []
+      - fieldName: output
+        node: {fileID: 0}
+        reroutePoints: []
+      - fieldName: output
+        node: {fileID: 0}
+        reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 1
@@ -94,8 +100,20 @@ MonoBehaviour:
       _typeQualifiedName: Dialogue.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections:
+      - fieldName: demo
+        node: {fileID: 0}
+        reroutePoints: []
+      - fieldName: demo
+        node: {fileID: 0}
+        reroutePoints: []
       - fieldName: choices 1
         node: {fileID: 3103682718266233960}
+        reroutePoints: []
+      - fieldName: output
+        node: {fileID: 0}
+        reroutePoints: []
+      - fieldName: output
+        node: {fileID: 0}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -217,7 +235,7 @@ MonoBehaviour:
   - {fileID: -3781422425174011632}
   - {fileID: -3566342577475741018}
   - {fileID: 3855094608080140131}
-  current: {fileID: 3103682718266233960}
+  current: {fileID: 3855094608080140131}
 --- !u!114 &3103682718266233960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,7 +249,7 @@ MonoBehaviour:
   m_Name: Chat
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -2264, y: -840}
+  position: {x: -2376, y: -856}
   ports:
     keys:
     - choices
@@ -362,6 +380,12 @@ MonoBehaviour:
       connections:
       - fieldName: choices 0
         node: {fileID: -3781422425174011632}
+        reroutePoints: []
+      - fieldName: output
+        node: {fileID: 0}
+        reroutePoints: []
+      - fieldName: output
+        node: {fileID: 0}
         reroutePoints: []
       _direction: 0
       _connectionType: 0

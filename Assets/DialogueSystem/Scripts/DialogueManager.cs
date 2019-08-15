@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Dialogue;
 using UnityEngine;
+using XNode;
 
 public class DialogueManager : MonoBehaviour {
 
@@ -35,7 +36,7 @@ public class DialogueManager : MonoBehaviour {
         ContinueDialogue();
     }
     
-    public void EndDialogue() {
+    private void EndDialogue() {
         active = false;
         chatbox.Hide();
         choicebox.Reset();
@@ -43,8 +44,8 @@ public class DialogueManager : MonoBehaviour {
     
     private void ContinueDialogue() {
         if (!active) return;
-        //display the next chat
-        currentChat = dialogueGraph.current; // while giving answer the current of the graph is updated
+        //display the next chat; while giving answer the current of the graph is updated
+        currentChat = dialogueGraph.current;
         DisplayChat();
     }
     
@@ -79,11 +80,7 @@ public class DialogueManager : MonoBehaviour {
     }
 
     private void OnChoiceSelected(int index) {
-        if (currentChat.GiveAnswer(index)) {
-            ContinueDialogue();
-        }
-        else {
-            EndDialogue();
-        }
+        currentChat.SelectChoice(index);
+        ContinueDialogue();
     }
 }

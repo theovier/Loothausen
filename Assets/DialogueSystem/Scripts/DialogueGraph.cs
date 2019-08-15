@@ -12,12 +12,5 @@ namespace Dialogue {
             //Find the first DialogueNode without any inputs. This is the starting node.
             current = nodes.Find(x => x is Chat && x.Inputs.All(y => !y.IsConnected)) as Chat;
         }
-        
-        public Chat GiveAnswerToCurrentQuestion(int answerIndex) {
-            current.GiveAnswer(answerIndex);
-            return current;
-        }
     }
 }
-
-
