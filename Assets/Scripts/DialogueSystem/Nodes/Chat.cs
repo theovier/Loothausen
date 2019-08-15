@@ -11,9 +11,10 @@ namespace Dialogue {
         
         public CharacterInfo character;
         [TextArea] public string text;
+        public AudioClip voiceClip;
         [Output(dynamicPortList = true)] public List<Choice> choices = new List<Choice>();
         
-
+        
         /// <summary> Triggers the (only) successor node in case no choices were given </summary>
         public void TriggerNext() {
             if (OffersChoices()) {
