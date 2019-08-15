@@ -24,6 +24,7 @@ public class ChoiceChat : Chat {
     this.text = origin.choices[selectedChoiceIndex].text;
     this.graph = origin.graph;
     this.choices = new List<Choice>();
+    this.voiceClip = origin.choices[selectedChoiceIndex].voiceClip;
     CreateConnectionToDestination();
   }
   
