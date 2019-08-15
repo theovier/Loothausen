@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using Dialogue;
 using UnityEngine;
-using XNode;
 
 public class DialogueManager : MonoBehaviour {
 
@@ -12,6 +12,7 @@ public class DialogueManager : MonoBehaviour {
     private DialogueGraph dialogueGraph;
     private Chat currentChat;
     private bool active;
+    private Coroutine scheduledChatSkip;
     
     private static DialogueManager instance;
     public static DialogueManager Instance => instance;
@@ -52,7 +53,13 @@ public class DialogueManager : MonoBehaviour {
     private void DisplayChat() {
         choicebox.Hide();
         chatbox.Show(currentChat);
+        scheduledChatSkip = StartCoroutine(ContinueDialogueAfterWait(2.0f));
     }
+
+    private IEnumerator ContinueDialogueAfterWait(float duration) {
+        yield return new WaitForSeconds(duration);
+        HandleDialogueInteraction();
+    } 
 
     private void DisplayChoices(List<Chat.Choice> choices) {
         chatbox.Hide();
@@ -67,8 +74,10 @@ public class DialogueManager : MonoBehaviour {
     }
 
     private void HandleDialogueInteraction() {
+        StopCoroutine(scheduledChatSkip);
+        
         if (currentChat.OffersChoices()){
-            // This condition is needed because otherwise the DialogueManager registers clicks on the choicebox's controls buttons also and resets the buttons via displayChoices.
+            // This condition is needed because otherwise the DialogueManager registers clicks on the choicebox's controls buttons and resets its buttons via displayChoices.
             if (choicebox.IsHidden()) {
                 DisplayChoices(currentChat.choices);
             }
