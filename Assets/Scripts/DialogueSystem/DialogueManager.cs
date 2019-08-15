@@ -15,7 +15,7 @@ public class DialogueManager : MonoBehaviour {
     private bool active;
     
     private Coroutine scheduledChatSkip;
-    private AudioSource voiceSource; //needed to stop dialogue audio when skipping dialogues
+    private int audioID; //needed to stop dialogue audio when skipping dialogues
     
     private static DialogueManager instance;
     public static DialogueManager Instance => instance;
@@ -56,7 +56,7 @@ public class DialogueManager : MonoBehaviour {
         var voiceClip = currentChat.voiceClip;
         if (voiceClip) {
             audioDuration = voiceClip.length;
-            voiceSource = AudioManager.PlaySound(voiceClip);
+            audioID = AudioManager.PlaySound(voiceClip);
         }
         else {
             audioDuration = fallbackChatDisplayTime;
@@ -100,9 +100,7 @@ public class DialogueManager : MonoBehaviour {
     }
 
     private void StopCurrentDialogueAudio() {
-        if (voiceSource) {
-            voiceSource.Stop();
-        }
+        AudioManager.StopSound(audioID);
     }
 
     private void OnChoiceSelected(int index) {
