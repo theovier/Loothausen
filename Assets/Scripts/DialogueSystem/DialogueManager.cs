@@ -8,11 +8,14 @@ public class DialogueManager : MonoBehaviour {
     public ChatBox chatbox;
     public ChoiceBox choicebox;
     public NameDisplayController displayName;
+    public float fallbackChatDisplayTime = 3.0f; //when no audio clip is set, the chat will be displayed for these seconds
     
     private DialogueGraph dialogueGraph;
     private Chat currentChat;
     private bool active;
+    
     private Coroutine scheduledChatSkip;
+    private AudioSource voiceSource; //needed to stop dialogue audio when skipping dialogues
     
     private static DialogueManager instance;
     public static DialogueManager Instance => instance;
@@ -48,7 +51,18 @@ public class DialogueManager : MonoBehaviour {
         currentChat = dialogueGraph.current;
         choicebox.Hide();
         chatbox.Show(currentChat);
-        scheduledChatSkip = StartCoroutine(ContinueDialogueAfterWait(2.0f));
+
+        float audioDuration;
+        var voiceClip = currentChat.voiceClip;
+        if (voiceClip) {
+            audioDuration = voiceClip.length;
+            voiceSource = AudioManager.PlaySound(voiceClip);
+        }
+        else {
+            audioDuration = fallbackChatDisplayTime;
+        }
+        
+        scheduledChatSkip = StartCoroutine(ContinueDialogueAfterWait(audioDuration));
     }
 
     private IEnumerator ContinueDialogueAfterWait(float duration) {
@@ -71,6 +85,7 @@ public class DialogueManager : MonoBehaviour {
 
     private void ContinueDialogue() {
         StopCoroutine(scheduledChatSkip);
+        StopCurrentDialogueAudio();
         
         if (currentChat.OffersChoices()){
             DisplayChoices(currentChat.choices);
@@ -81,6 +96,12 @@ public class DialogueManager : MonoBehaviour {
         }
         else {
             EndDialogue();
+        }
+    }
+
+    private void StopCurrentDialogueAudio() {
+        if (voiceSource) {
+            voiceSource.Stop();
         }
     }
 

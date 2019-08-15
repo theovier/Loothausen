@@ -90,8 +90,9 @@ MonoBehaviour:
   input: {fileID: 0}
   output: {fileID: 0}
   character: {fileID: 11400000, guid: 05254f6fa140c1f45adf267832526968, type: 2}
-  text: Ich freue mich, dass du das fragst. Magie. Aber die Demo ist nun auch vorbei.
+  text: Ich freue mich, dass du das fragst. Magie. Aber die Demo ist auch vorbei.
     Komm doch bald wieder.
+  voiceClip: {fileID: 8300000, guid: 34b4d8618f20a5a48843338a9d2ca258, type: 3}
   choices: []
 --- !u!114 &-3781422425174011632
 MonoBehaviour:
@@ -225,6 +226,7 @@ MonoBehaviour:
   output: {fileID: 0}
   character: {fileID: 11400000, guid: 05254f6fa140c1f45adf267832526968, type: 2}
   text: Ja, oder?
+  voiceClip: {fileID: 0}
   choices:
   - text: Ja!
     voiceClip: {fileID: 0}
@@ -312,6 +314,7 @@ MonoBehaviour:
   output: {fileID: 0}
   character: {fileID: 11400000, guid: 05254f6fa140c1f45adf267832526968, type: 2}
   text: "Tja... Gl\xFCck gehabt, die Demo ist zuende."
+  voiceClip: {fileID: 0}
   choices: []
 --- !u!114 &11400000
 MonoBehaviour:
@@ -331,7 +334,7 @@ MonoBehaviour:
   - {fileID: -3781422425174011632}
   - {fileID: -3566342577475741018}
   - {fileID: 3855094608080140131}
-  current: {fileID: 3103682718266233960}
+  current: {fileID: 0}
 --- !u!114 &3103682718266233960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -449,20 +452,21 @@ MonoBehaviour:
   input: {fileID: 0}
   output: {fileID: 0}
   character: {fileID: 11400000, guid: 05254f6fa140c1f45adf267832526968, type: 2}
-  text: Hallo, das ist das neue Dialog-System!
+  text: Hey, Du! Das hier ist das neue Dialogsystem.
+  voiceClip: {fileID: 8300000, guid: e15c7191107abb34a81a2bbd04c75ac4, type: 3}
   choices:
   - text: Wie funktioniert es?
-    voiceClip: {fileID: 0}
-  - text: Das klingt toll.
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 0dae83f47a003684b8ef39f97fc93ec7, type: 3}
+  - text: Mensch, das aber klingt toll.
+    voiceClip: {fileID: 8300000, guid: 736382ca40cb4e649b38a8fce030c915, type: 3}
   - text: Wen juckts?
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: a8ab94d94bce07c4d8e82de6f62234f0, type: 3}
   - text: "Tsch\xFCss!"
-    voiceClip: {fileID: 0}
-  - text: "H\xF6r ich mir sp\xE4ter an."
-    voiceClip: {fileID: 0}
-  - text: Gibts das auch in blau?
-    voiceClip: {fileID: 0}
+    voiceClip: {fileID: 8300000, guid: 9b0b7185870f1c44d9d818a1963518bc, type: 3}
+  - text: "H\xF6r ich mir sp\xE4ter irgendwann an, wenn das f\xFCr dich okay ist. "
+    voiceClip: {fileID: 8300000, guid: 9cf79457580ae974c9a597130cd5e8d0, type: 3}
+  - text: Gibts das auch in ... sagen wir blau?
+    voiceClip: {fileID: 8300000, guid: b6aacf90636d4414591128ead74ec146, type: 3}
 --- !u!114 &3855094608080140131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -536,4 +540,5 @@ MonoBehaviour:
   output: {fileID: 0}
   character: {fileID: 11400000, guid: 05254f6fa140c1f45adf267832526968, type: 2}
   text: Ich mag es auch total, aber die Demo ist jetzt vorbei.
+  voiceClip: {fileID: 0}
   choices: []
