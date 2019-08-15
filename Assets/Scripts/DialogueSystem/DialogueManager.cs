@@ -68,7 +68,10 @@ public class DialogueManager : MonoBehaviour {
 
     private void HandleDialogueInteraction() {
         if (currentChat.OffersChoices()){
-            DisplayChoices(currentChat.choices);
+            // This condition is needed because otherwise the DialogueManager registers clicks on the choicebox's controls buttons also and resets the buttons via displayChoices.
+            if (choicebox.IsHidden()) {
+                DisplayChoices(currentChat.choices);
+            }
         }
         else if (currentChat.HasSuccessors()) {
             currentChat.TriggerNext();

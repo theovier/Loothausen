@@ -1,9 +1,7 @@
-﻿using System;
-using DG.Tweening;
+﻿using DG.Tweening;
 using Dialogue;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
 using Button = UnityEngine.UI.Button;
 
 public class ChoiceBox : MonoBehaviour {
@@ -62,6 +60,10 @@ public class ChoiceBox : MonoBehaviour {
     public void Hide() {
         rectTransform.DOPlayBackwards();
         gameObject.SetActive(false);
+    }
+    
+    public bool IsHidden() {
+        return !gameObject.activeSelf;
     }
 
     public void Reset() {
