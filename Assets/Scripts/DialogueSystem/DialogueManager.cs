@@ -68,6 +68,7 @@ public class DialogueManager : MonoBehaviour {
     
     private void Update() {
         if (!active) return;
+        if (choicebox.IsVisible()) return;
         if (Input.GetKeyDown(KeyCode.Mouse0)) {
             HandleDialogueInteraction();
         }
@@ -77,10 +78,7 @@ public class DialogueManager : MonoBehaviour {
         StopCoroutine(scheduledChatSkip);
         
         if (currentChat.OffersChoices()){
-            // This condition is needed because otherwise the DialogueManager registers clicks on the choicebox's controls buttons and resets its buttons via displayChoices.
-            if (choicebox.IsHidden()) {
-                DisplayChoices(currentChat.choices);
-            }
+            DisplayChoices(currentChat.choices);
         }
         else if (currentChat.HasSuccessors()) {
             currentChat.TriggerNext();

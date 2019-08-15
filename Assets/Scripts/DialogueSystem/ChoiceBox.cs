@@ -66,6 +66,10 @@ public class ChoiceBox : MonoBehaviour {
         return !gameObject.activeSelf;
     }
 
+    public bool IsVisible() {
+        return !IsHidden();
+    }
+
     public void Reset() {
         Hide();
         pageIndex = 0;
