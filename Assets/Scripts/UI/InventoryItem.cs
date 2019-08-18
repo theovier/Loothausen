@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
 
     public NameDisplayController tooltip;
-    public string name;
+    public string itemName;
     public Vector2 scaleOnHover = new Vector2(1.2f, 1.2f);
     public float scaleDurationOnHover = 0.25f;
     
@@ -19,7 +19,7 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void OnPointerEnter(PointerEventData eventData) {
         ScaleUp();
-        tooltip.DisplayText(name);
+        tooltip.DisplayText(itemName);
     }
 
     public void OnPointerExit(PointerEventData eventData) {
