@@ -1360,10 +1360,11 @@ GameObject:
   - component: {fileID: 418033595}
   - component: {fileID: 418033597}
   - component: {fileID: 418033596}
-  - component: {fileID: 418033599}
   - component: {fileID: 418033598}
+  - component: {fileID: 418033599}
+  - component: {fileID: 418033600}
   m_Layer: 5
-  m_Name: InventorySlot
+  m_Name: InventoryItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1437,37 +1438,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 418033594}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b29e12d220b8fb4faaea423ba29a274, type: 3}
+  m_Script: {fileID: 11500000, guid: 2ae386c4161deed48b09d6b83df38e7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 1339204642}
-  text: An item
---- !u!61 &418033599
-BoxCollider2D:
+  tooltip: {fileID: 1339204642}
+  itemName: 
+  scaleOnHover: {x: 1.2, y: 1.2}
+  scaleDurationOnHover: 0.25
+--- !u!114 &418033599
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 418033594}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ff77de63fac48c4bb120401e46f6eaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 9361770}
+--- !u!114 &418033600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418033594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12b164b706be5b9498aa1e7e604b5c3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &448934919
 GameObject:
   m_ObjectHideFlags: 0
@@ -6212,7 +6214,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2136455630
 Transform:
   m_ObjectHideFlags: 0
