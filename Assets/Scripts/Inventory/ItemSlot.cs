@@ -7,30 +7,61 @@ using UnityEngine.UI;
 
 public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
     
-    public NameDisplayController tooltip;
-    public Vector2 scaleOnHover = new Vector2(1.2f, 1.2f);
-    public float scaleDurationOnHover = 0.25f;
-    public Item item;
     public Image iconImage;
     public GameObject indicator;
+    public Vector2 scaleOnHover = new Vector2(1.2f, 1.2f);
+    public float scaleDurationOnHover = 0.25f;
+
+    public Item Item {
+        get { return item; }
+        set {SetItem(value); Show();}
+    }
     
-    private bool isPointerOver;
+    private Item item;
     private RectTransform rectTransform;
+    private NameDisplayController tooltip;
 
     private void Awake() {
         rectTransform = GetComponent<RectTransform>();
-        iconImage.sprite = item.icon;
+        tooltip = GameObject.FindGameObjectWithTag("TooltipBox").GetComponent<NameDisplayController>();
+        Hide();
     }
     
     public void OnPointerEnter(PointerEventData eventData) {
-        isPointerOver = true;
         tooltip.DisplayText(item.itemName);
         rectTransform.DOScale(new Vector3(scaleOnHover.x, scaleOnHover.y, 0), scaleDurationOnHover).SetAutoKill(false);
     }
 
     public void OnPointerExit(PointerEventData eventData) {
-        isPointerOver = false;
         tooltip.Hide();
         rectTransform.DOPlayBackwards();
     }
+    
+    public bool IsEmpty() {
+        return !item;
+    }
+
+    public void SetItem(Item item) {
+        this.item = item;
+        iconImage.sprite = item.icon;
+    }
+
+    public bool HasItem(Item item) {
+        return this.item.Equals(item);
+    }
+    
+    public void Clear() {
+        item = null;
+        Hide();
+    }
+
+    public void Hide() {
+        gameObject.SetActive(false);
+    }
+
+    public void Show() {
+        gameObject.SetActive(true);
+    }
+    
+    
 }

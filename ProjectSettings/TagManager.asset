@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Talk
   - Inspect
+  - TooltipBox
   layers:
   - Default
   - TransparentFX
