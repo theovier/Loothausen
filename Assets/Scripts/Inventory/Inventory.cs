@@ -31,6 +31,11 @@ public class Inventory : MonoBehaviour, IItemContainer {
         nextButton.onClick.AddListener(OnNextItem);
     }
 
+    private void Start() {
+        HideNextButton();
+        HidePreviousButton();
+    }
+    
     public void AddItem(Item item) {
         items.Add(item);
 
@@ -62,11 +67,11 @@ public class Inventory : MonoBehaviour, IItemContainer {
         foreach (var slot in itemSlots) {
             slot.Clear();
         }
-
         items.Clear();
     }
 
     private void OnNextItem() {
+        //todo make a generic shiftable list (ChoiceBox uses basically same methods)
         ShowPreviousButton();
         timesNextPressed++;
         
@@ -82,7 +87,6 @@ public class Inventory : MonoBehaviour, IItemContainer {
         if (LastItemDisplaying()) {
             HideNextButton();
         }
-        
     }
 
     private bool LastItemDisplaying() {

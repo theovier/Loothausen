@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: input_images
   m_EditorClassIdentifier: 
   hashCode: 1373270077
-  material: {fileID: 8308850969819754818}
+  material: {fileID: 7000972916642726835}
   materialHashCode: 0
   m_Version: 1.1.0
   spriteSheet: {fileID: 2800000, guid: f2f6da97ebfa5594a89578714ae18515, type: 3}
@@ -30,6 +30,18 @@ MonoBehaviour:
     m_Scale: 2
     m_Name: input_images_1
     m_HashCode: 842491891
+  - m_ElementType: 2
+    m_Unicode: 0
+    m_GlyphIndex: 2
+    m_Scale: 2
+    m_Name: input_images_2
+    m_HashCode: 842491888
+  - m_ElementType: 2
+    m_Unicode: 0
+    m_GlyphIndex: 3
+    m_Scale: 2
+    m_Name: input_images_3
+    m_HashCode: 842491889
   m_SpriteGlyphTable:
   - m_Index: 0
     m_Metrics:
@@ -45,7 +57,7 @@ MonoBehaviour:
       m_Height: 256
     m_Scale: 1
     m_AtlasIndex: 0
-    sprite: {fileID: 9021666544643097968, guid: 55138a1d21f13154683afcacdb94ce99,
+    sprite: {fileID: 9021666544643097968, guid: f2f6da97ebfa5594a89578714ae18515,
       type: 3}
   - m_Index: 1
     m_Metrics:
@@ -61,11 +73,43 @@ MonoBehaviour:
       m_Height: 256
     m_Scale: 1
     m_AtlasIndex: 0
-    sprite: {fileID: -8847463200391510361, guid: 55138a1d21f13154683afcacdb94ce99,
+    sprite: {fileID: -8847463200391510361, guid: f2f6da97ebfa5594a89578714ae18515,
+      type: 3}
+  - m_Index: 2
+    m_Metrics:
+      m_Width: 256
+      m_Height: 256
+      m_HorizontalBearingX: -128
+      m_HorizontalBearingY: 128
+      m_HorizontalAdvance: 256
+    m_GlyphRect:
+      m_X: 512
+      m_Y: 768
+      m_Width: 256
+      m_Height: 256
+    m_Scale: 1
+    m_AtlasIndex: 0
+    sprite: {fileID: 6018862456334803714, guid: f2f6da97ebfa5594a89578714ae18515,
+      type: 3}
+  - m_Index: 3
+    m_Metrics:
+      m_Width: 256
+      m_Height: 256
+      m_HorizontalBearingX: -128
+      m_HorizontalBearingY: 128
+      m_HorizontalAdvance: 256
+    m_GlyphRect:
+      m_X: 768
+      m_Y: 768
+      m_Width: 256
+      m_Height: 256
+    m_Scale: 1
+    m_AtlasIndex: 0
+    sprite: {fileID: 8296939935846273200, guid: f2f6da97ebfa5594a89578714ae18515,
       type: 3}
   spriteInfoList: []
   fallbackSpriteAssets: []
---- !u!21 &8308850969819754818
+--- !u!21 &7000972916642726835
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 1

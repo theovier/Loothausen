@@ -8,6 +8,12 @@ TextureImporter:
   - first:
       213: -8847463200391510361
     second: input_images_1
+  - first:
+      213: 6018862456334803714
+    second: input_images_2
+  - first:
+      213: 8296939935846273200
+    second: input_images_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -106,7 +112,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4872c9875cad5847a21ee64dfc5fca8
+      spriteID: 5468dd6d7bdd7344594d49b4a4d0fa70
       internalID: 9021666544643097968
       vertices: []
       indices: 
@@ -127,8 +133,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 107e9fef56667e845ac495f6be882391
+      spriteID: c6beb483d2f52394e86ae1e854a57615
       internalID: -8847463200391510361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: input_images_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1372e9c8a22ec954eab85a65f361e3f7
+      internalID: 6018862456334803714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: input_images_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2ccdd2128eb27c45a4be2b4a24b0a47
+      internalID: 8296939935846273200
       vertices: []
       indices: 
       edges: []
@@ -144,7 +192,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
   spritePackingTag: 
-  pSDRemoveMatte: 0
+  pSDRemoveMatte: 1
   pSDShowRemoveMatteOption: 1
   userData: 
   assetBundleName: 
