@@ -72,7 +72,7 @@ public class DialogueManager : MonoBehaviour {
 
     private void DisplayChoices(List<Chat.Choice> choices) {
         chatbox.Hide();
-        choicebox.DisplayChoices(choices.ToArray(), OnChoiceSelected);
+        choicebox.DisplayChoices(choices, OnChoiceSelected);
     }
     
     private void Update() {

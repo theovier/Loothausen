@@ -39,12 +39,20 @@ public class ItemSlot : MonoBehaviour, IWrapper<Item>, IPointerEnterHandler, IPo
 
     public void Clear() {
         item = null;
+        Disable();
+    }
+
+    public void Enable() {
+        gameObject.SetActive(true);
+    }
+
+    public void Disable() {
         gameObject.SetActive(false);
     }
     
     private void Refresh() {
         iconImage.sprite = item.icon;
-        gameObject.SetActive(true);
+        Enable();
     }
     
     public void OnPointerEnter(PointerEventData eventData) {

@@ -5,4 +5,6 @@ public interface IWrapper <T> {
     bool HasContent(T contentCandidate);
     bool IsEmpty();
     void Clear();
+    void Enable();
+    void Disable();
 }
