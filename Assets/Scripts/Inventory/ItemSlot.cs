@@ -41,7 +41,7 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         return !item;
     }
 
-    public void SetItem(Item item) {
+    private void SetItem(Item item) {
         this.item = item;
         iconImage.sprite = item.icon;
     }

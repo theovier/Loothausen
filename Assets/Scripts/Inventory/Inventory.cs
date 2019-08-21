@@ -6,8 +6,9 @@ using UnityEngine.UI;
 //we can have infinite items but only display a finite number of item slots (9) at once
 public class Inventory : MonoBehaviour, IItemContainer {
 
-    public Item testItem;
-
+    public Item item1;
+    public Item item2;
+    
     private List<Item> items = new List<Item>();
     private List<ItemSlot> itemSlots = new List<ItemSlot>();
     private Button nextButton;
@@ -52,17 +53,65 @@ public class Inventory : MonoBehaviour, IItemContainer {
     }
 
     public bool RemoveItem(Item item) {
-        foreach (var slot in itemSlots) {
-            if (slot.HasItem(item)) {
-                slot.Clear();
-                break;
-            }
+        bool hadItem = items.Remove(item);
+        if (hadItem && IsInAnySlot(item)) {
+            var emptySlotIndex = RemoveItemFromAnySlot(item);
+            ShiftRemainingSlotItems(emptySlotIndex);
         }
-
-        //fill all slots again if we have more items than slots, disable buttons if needed etc.
-        return items.Remove(item);
+        
+        if (items.Count - timesNextPressed <= itemSlots.Count) {
+            HideNextButton();
+        }
+        return hadItem;
+    }
+    
+    private bool IsInAnySlot(Item item) {
+        return itemSlots.Any(x => x.HasItem(item));
     }
 
+    private int RemoveItemFromAnySlot(Item item) {
+        var emptySlotIndex = GetSlotIndexOfItem(item);
+        itemSlots[emptySlotIndex].Clear();
+        return emptySlotIndex;
+    }
+    
+    private int GetSlotIndexOfItem(Item item) {
+        for (var i = 0; i < itemSlots.Count; i++) {
+            var slot = itemSlots[i];
+            if (slot.HasItem(item)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    private void ShiftRemainingSlotItems(int emptySlotIndex) {
+        for (var i = emptySlotIndex; i < itemSlots.Count - 1; i++) {
+            var nextSlot = itemSlots[i + 1];
+            if (nextSlot.IsEmpty()) {
+                //if all following slots are empty, there is no need to shift.
+                return;
+            }
+            var item = nextSlot.Item;
+            nextSlot.Clear();
+            itemSlots[i].Item = item;
+        }
+        
+        if (LastSlot().IsEmpty()) {
+            if (items.Count >= itemSlots.Count) {
+                var nextItemIndex = itemSlots.Count - 1 + timesNextPressed;
+                if (nextItemIndex < items.Count) {
+                    var nextHiddenItem = items[nextItemIndex];
+                    LastSlot().Item = nextHiddenItem;
+                }
+            }
+            if (items.Count <= timesNextPressed + itemSlots.Count) {
+                //this state cannot be reached normally without deletion. The last slot is always in use if items.count >= itemSlots.count
+                OnPreviousItem();
+            }
+        }
+    }
+    
     public void Clear() {
         foreach (var slot in itemSlots) {
             slot.Clear();
@@ -78,11 +127,11 @@ public class Inventory : MonoBehaviour, IItemContainer {
         for (var i = 0; i < itemSlots.Count - 1; i++) {
             var slot = itemSlots[i + 1];
             var item = slot.Item;
-            itemSlots[i].SetItem(item);
+            itemSlots[i].Item = item;
         }
         
         var nextHiddenItem = items[itemSlots.Count - 1 + timesNextPressed];
-        LastSlot().SetItem(nextHiddenItem);
+        LastSlot().Item = nextHiddenItem;
 
         if (LastItemDisplaying()) {
             HideNextButton();
@@ -101,7 +150,7 @@ public class Inventory : MonoBehaviour, IItemContainer {
         for (var i = itemSlots.Count - 1; i > 0; i--) {
             var slot = itemSlots[i - 1];
             var item = slot.Item;
-            itemSlots[i].SetItem(item);
+            itemSlots[i].Item = item;
         }
         
         var previousHiddenItem = items[timesNextPressed];
@@ -146,7 +195,15 @@ public class Inventory : MonoBehaviour, IItemContainer {
     
     void Update() {
         if (Input.GetKeyDown(KeyCode.Space)) {
-            AddItem(Instantiate(testItem));
+            AddItem(Instantiate(item1));
+        }
+        
+        if (Input.GetKeyDown(KeyCode.A)) {
+            AddItem(item2);
+        }
+
+        if (Input.GetKeyDown(KeyCode.R)) {
+            RemoveItem(item2);
         }
     }
 }
