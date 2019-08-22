@@ -1,16 +1,16 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class DisplayName : MonoBehaviour {
+public class DisplayName : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
 
     public NameDisplayController controller;
     public string text;
     
-    private void OnMouseEnter() {
+    public void OnPointerEnter(PointerEventData eventData) {
         controller.DisplayText(text);
     }
 
-    private void OnMouseExit() {
+    public void OnPointerExit(PointerEventData eventData) {
         controller.Hide();
     }
-    
 }
