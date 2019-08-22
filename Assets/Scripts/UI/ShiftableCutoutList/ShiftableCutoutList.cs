@@ -108,7 +108,7 @@ public class ShiftableCutoutList<T> : IShiftableCutoutList<T> {
         if (HasAtLeastAsManyItemsAsWrappers()) {
             FillLastWrapperWithNextItem();
         }
-        else if (NoNextItemsLeft()) {
+        else if (NoNextItemsLeft() && timesNextPressed > 0) {
             OnPrevious();
         }
     }
