@@ -5266,7 +5266,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 7270569546602953091}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -6689,6 +6689,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DragGhost
       objectReference: {fileID: 0}
+    - target: {fileID: 7270569546210513538, guid: ec7a455222cb34b4fbf6ff2b3dbe00cd,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7270569546210513537, guid: ec7a455222cb34b4fbf6ff2b3dbe00cd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6793,6 +6798,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270569546210513536, guid: ec7a455222cb34b4fbf6ff2b3dbe00cd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec7a455222cb34b4fbf6ff2b3dbe00cd, type: 3}
@@ -7088,6 +7098,12 @@ PrefabInstance:
       propertyPath: inspectCursorScale.y
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 8438391015647744610, guid: d8ebec1ad59fca94695211f2ca70e8c3,
+        type: 3}
+      propertyPath: grabCursor
+      value: 
+      objectReference: {fileID: 21300000, guid: a76fcc311692fb841930f700eebfb40b,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8ebec1ad59fca94695211f2ca70e8c3, type: 3}
 --- !u!224 &8438391015514386811 stripped

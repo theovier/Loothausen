@@ -6,6 +6,7 @@ public class MouseCursor : MonoBehaviour {
     public Sprite defaultCursor;
     public Sprite talkCursor;
     public Sprite inspectCursor;
+    public Sprite grabCursor;
     
     public Vector2 defaultCursorScale = new Vector2(13, 17);
     public Vector2 defaultCursorRotation = new Vector2(0, 20);
@@ -15,6 +16,9 @@ public class MouseCursor : MonoBehaviour {
     
     public Vector2 inspectCursorScale = new Vector2(13, 13);
     public Vector2 inspectCursorRotation;
+    
+    public Vector2 grabCursorScale = new Vector2(13, 13);
+    public Vector2 grabCursorRotation;
     
     public LayerMask layerMask;
     
@@ -56,7 +60,6 @@ public class MouseCursor : MonoBehaviour {
         var ray = mainCamera.ScreenPointToRay(Input.mousePosition); 
         return Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity, layerMask);
     }
-    
     private void OnApplicationFocus(bool focusStatus) {
         if (focusStatus) {
             Cursor.visible = false;
@@ -71,6 +74,10 @@ public class MouseCursor : MonoBehaviour {
             }
             case "Inspect": {
                 ChangeStyle(CursorStyle.Inspect);
+                break;
+            }
+            case "Grab": {
+                ChangeStyle(CursorStyle.Grab);
                 break;
             }
             default: {
@@ -93,6 +100,9 @@ public class MouseCursor : MonoBehaviour {
                 break;
             case CursorStyle.Inspect:
                 SetInspectStyle();
+                break;
+            case CursorStyle.Grab:
+                SetGrabStyle();
                 break;
             default:
                 SetNormalStyle();
@@ -121,10 +131,18 @@ public class MouseCursor : MonoBehaviour {
         rectTransform.localScale = new Vector3(inspectCursorScale.x, inspectCursorScale.y, 0);
     }
     
+    private void SetGrabStyle() {
+        currentStyle = CursorStyle.Grab;
+        current.sprite = grabCursor;
+        rectTransform.localRotation = Quaternion.Euler(0, grabCursorRotation.x, grabCursorRotation.y);
+        rectTransform.localScale = new Vector3(grabCursorScale.x, grabCursorScale.y, 0);
+    }
+    
 }
 
 public enum CursorStyle {
     Normal,
     Talk,
-    Inspect
+    Inspect,
+    Grab
 }
