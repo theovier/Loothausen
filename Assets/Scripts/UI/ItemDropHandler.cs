@@ -15,6 +15,9 @@ public class ItemDropHandler : MonoBehaviour, IDropHandler {
             // simply completely ignore these.
             return;
         }
+
+        //Hide the ghost from the drag handler, so we don't see the animation of it returning to the inventory
+        d.HideGhost();
         
         ItemSlot fromItemSlot = from.GetComponent<ItemSlot>();
         Item item = fromItemSlot.GetContent();

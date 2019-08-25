@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using DG.Tweening;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -9,12 +7,17 @@ using UnityEngine.UI;
 public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
     
     public Image ghost;
+    [Tooltip("Animation duration of the item returning to the inventory when the drag did not end up in a drop zone.")]
+    public float returnAnimDuration = 0.5f;
+    
     private ItemSlot itemSlot;
+    private Vector3 itemSlotPosition;
     private RectTransform rect;
     private MouseCursor cursor;
     
     private void Awake() {
         itemSlot = GetComponent<ItemSlot>();
+        itemSlotPosition = itemSlot.transform.position;
         cursor = GameObject.FindObjectOfType<MouseCursor>();
         ghost.raycastTarget = false;
         ghost.enabled = false;
@@ -33,7 +36,12 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     }
 
     public void OnEndDrag(PointerEventData eventData) {
-        ghost.enabled = false;
         cursor.lockStyle = false;
+        var ghostRect = ghost.GetComponent<RectTransform>();
+        ghostRect.DOMove(itemSlotPosition, returnAnimDuration, true).OnComplete(HideGhost);
+    }
+
+    public void HideGhost() {
+        ghost.enabled = false;
     }
 }
