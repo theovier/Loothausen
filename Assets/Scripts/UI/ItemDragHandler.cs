@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 //credit https://stackoverflow.com/questions/37473802/unity3d-ui-calculation-for-position-dragging-an-item/37473953#37473953
-public class ItemDragAndDropHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler {
+public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
     
     public Image ghost;
     private ItemSlot itemSlot;
@@ -30,9 +30,5 @@ public class ItemDragAndDropHandler : MonoBehaviour, IBeginDragHandler, IDragHan
 
     public void OnEndDrag(PointerEventData eventData) {
         ghost.enabled = false;
-    }
-
-    public void OnDrop(PointerEventData data) {
-        throw new NotImplementedException();
     }
 }
