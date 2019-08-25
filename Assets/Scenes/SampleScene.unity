@@ -6692,7 +6692,12 @@ PrefabInstance:
     - target: {fileID: 7270569546210513538, guid: ec7a455222cb34b4fbf6ff2b3dbe00cd,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Grab
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270569546210513538, guid: ec7a455222cb34b4fbf6ff2b3dbe00cd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7270569546210513537, guid: ec7a455222cb34b4fbf6ff2b3dbe00cd,
         type: 3}
@@ -6911,6 +6916,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8438391015647744621, guid: d8ebec1ad59fca94695211f2ca70e8c3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8438391015647744611, guid: d8ebec1ad59fca94695211f2ca70e8c3,
         type: 3}

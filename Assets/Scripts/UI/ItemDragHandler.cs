@@ -11,9 +11,11 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     public Image ghost;
     private ItemSlot itemSlot;
     private RectTransform rect;
+    private MouseCursor cursor;
     
     private void Awake() {
         itemSlot = GetComponent<ItemSlot>();
+        cursor = GameObject.FindObjectOfType<MouseCursor>();
         ghost.raycastTarget = false;
         ghost.enabled = false;
     }
@@ -22,6 +24,8 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         ghost.sprite = itemSlot.GetContent().icon;
         ghost.transform.position = transform.position;
         ghost.enabled = true;
+        cursor.ChangeStyle(CursorStyle.Grab);
+        cursor.lockStyle = true;
     }
 
     public void OnDrag(PointerEventData eventData) {
@@ -30,5 +34,6 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
     public void OnEndDrag(PointerEventData eventData) {
         ghost.enabled = false;
+        cursor.lockStyle = false;
     }
 }

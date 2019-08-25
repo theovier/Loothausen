@@ -21,6 +21,8 @@ public class MouseCursor : MonoBehaviour {
     public Vector2 grabCursorRotation;
     
     public LayerMask layerMask;
+
+    public bool lockStyle;
     
     private Image current;
     private RectTransform rectTransform;
@@ -49,6 +51,8 @@ public class MouseCursor : MonoBehaviour {
 
     private void UpdateCursorStyle() {
         var hit = RaycastFromMouse();
+        //let the raycast happen first because it may trigger events
+        if (lockStyle) return; 
         if (hit) {
             ChangeStyle(hit.collider.tag);
         } else {
@@ -60,6 +64,7 @@ public class MouseCursor : MonoBehaviour {
         var ray = mainCamera.ScreenPointToRay(Input.mousePosition); 
         return Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity, layerMask);
     }
+    
     private void OnApplicationFocus(bool focusStatus) {
         if (focusStatus) {
             Cursor.visible = false;
@@ -87,7 +92,7 @@ public class MouseCursor : MonoBehaviour {
         }
     }
     
-    private void ChangeStyle(CursorStyle style) {
+    public void ChangeStyle(CursorStyle style) {
         if (currentStyle == style) {
             return;
         }
