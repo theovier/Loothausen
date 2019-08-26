@@ -20,7 +20,6 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     private void Awake() {
         itemSlot = GetComponent<ItemSlot>();
         inventoryShowOnHover = GetComponentInParent<ShowOnHover>();
-        itemSlotPosition = itemSlot.transform.position;
         cursor = GameObject.FindObjectOfType<MouseCursor>();
         ghost.raycastTarget = false;
         ghost.enabled = false;
@@ -29,6 +28,7 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     public void OnBeginDrag(PointerEventData eventData) {
         ghost.sprite = itemSlot.GetContent().icon;
         ghost.transform.position = transform.position;
+        itemSlotPosition = itemSlot.transform.position;
         ghost.enabled = true;
         cursor.ChangeStyle(CursorStyle.Grab);
         cursor.lockStyle = true;
