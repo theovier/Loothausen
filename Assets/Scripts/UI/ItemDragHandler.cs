@@ -14,9 +14,12 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     private Vector3 itemSlotPosition;
     private RectTransform rect;
     private MouseCursor cursor;
+
+    private ShowOnHover inventoryShowOnHover;
     
     private void Awake() {
         itemSlot = GetComponent<ItemSlot>();
+        inventoryShowOnHover = GetComponentInParent<ShowOnHover>();
         itemSlotPosition = itemSlot.transform.position;
         cursor = GameObject.FindObjectOfType<MouseCursor>();
         ghost.raycastTarget = false;
@@ -29,6 +32,7 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         ghost.enabled = true;
         cursor.ChangeStyle(CursorStyle.Grab);
         cursor.lockStyle = true;
+        inventoryShowOnHover.Lock();
     }
 
     public void OnDrag(PointerEventData eventData) {
@@ -43,5 +47,6 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
     public void HideGhost() {
         ghost.enabled = false;
+        inventoryShowOnHover.Unlock();
     }
 }
