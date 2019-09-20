@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-3979888655992055788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 488a1a8a6727de84a8bb979c5cabab28, type: 3}
+  m_Name: Reward
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 104, y: -312}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: -3979888655992055788}
+      _typeQualifiedName: Dialogue.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: output
+        node: {fileID: -2578729007881735532}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 1
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: -3979888655992055788}
+      _typeQualifiedName: Dialogue.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  input: {fileID: 0}
+  output: {fileID: 0}
+  items:
+  - {fileID: 11400000, guid: 593a7581c1ea08a46b877d7dda748174, type: 2}
 --- !u!114 &-2578729007881735532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13,7 +57,7 @@ MonoBehaviour:
   m_Name: Chat
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -342, y: -310}
+  position: {x: -344, y: -328}
   ports:
     keys:
     - choices
@@ -43,7 +87,10 @@ MonoBehaviour:
       _node: {fileID: -2578729007881735532}
       _typeQualifiedName: Dialogue.DialogueNode, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: input
+        node: {fileID: -3979888655992055788}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
@@ -52,6 +99,7 @@ MonoBehaviour:
   output: {fileID: 0}
   character: {fileID: 11400000, guid: 11434f49b283b9341ae7e16fa652c409, type: 2}
   text: "Uh... Das stinkt aber \xFCbel..."
+  voiceClip: {fileID: 0}
   choices: []
 --- !u!114 &11400000
 MonoBehaviour:
@@ -67,4 +115,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodes:
   - {fileID: -2578729007881735532}
-  current: {fileID: -2578729007881735532}
+  - {fileID: -3979888655992055788}
+  current: {fileID: 0}

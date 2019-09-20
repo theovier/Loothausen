@@ -68,7 +68,12 @@ public class DialogueManager : MonoBehaviour {
     private IEnumerator ContinueDialogueAfterWait(float duration) {
         yield return new WaitForSeconds(duration);
         ContinueDialogue();
-    } 
+    }
+
+    private bool ChatDidNotChangeAfterTriggerSuccessors() {
+        //must be called after currentChat.TriggerSuccessors to determine this
+        return currentChat == dialogueGraph.current;
+    }
 
     private void DisplayChoices(List<Chat.Choice> choices) {
         chatbox.Hide();
@@ -92,7 +97,8 @@ public class DialogueManager : MonoBehaviour {
         }
         else if (currentChat.HasSuccessors()) {
             currentChat.TriggerSuccessors();
-            DisplayCurrentChat();
+            if (ChatDidNotChangeAfterTriggerSuccessors()) EndDialogue();
+            else DisplayCurrentChat();
         }
         else {
             EndDialogue();
