@@ -12,16 +12,20 @@ public class ShowOnHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     private UIFader fader;
     private bool visibilityLock;
 
+    private bool cursorInside;
+
     private void Awake() {
         fader = gameObject.AddComponent<UIFader>();
         fader.uiElement = inventoryBar.GetComponent<CanvasGroup>();
     }
 
     public void OnPointerEnter(PointerEventData eventData) {
+        cursorInside = true;
         ShowInventoryBar();
     }
 
     public void OnPointerExit(PointerEventData eventData) {
+        cursorInside = false;
         if (visibilityLock) return;
         HideInventoryBar();
     }
@@ -42,6 +46,8 @@ public class ShowOnHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void Unlock() {
         visibilityLock = false;
-        HideInventoryBar();
+        if (!cursorInside) {
+            HideInventoryBar();
+        }
     }
 }
