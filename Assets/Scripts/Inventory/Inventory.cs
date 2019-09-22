@@ -4,9 +4,6 @@ using UnityEngine.UI;
 
 //we can have infinite items but only display a finite number of item slots (9) at once
 public class Inventory : MonoBehaviour, IItemContainer {
-
-    public Item item1;
-    public Item item2;
     
     private List<IWrapper<Item>> itemSlots = new List<IWrapper<Item>>();
     private ShiftableCutoutList<Item> cutoutList;
@@ -47,20 +44,4 @@ public class Inventory : MonoBehaviour, IItemContainer {
     public void Clear() {
         cutoutList.Clear();
     }
-
-    //Just for Debugging
-    void Update() {
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            AddItem(Instantiate(item1));
-        }
-        
-        if (Input.GetKeyDown(KeyCode.A)) {
-            AddItem(item2);
-        }
-
-        if (Input.GetKeyDown(KeyCode.R)) {
-            RemoveItem(item2);
-        }
-    }
-
 }
