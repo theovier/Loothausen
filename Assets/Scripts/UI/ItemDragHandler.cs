@@ -16,11 +16,13 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     private MouseCursor cursor;
 
     private ShowOnHover inventoryShowOnHover;
+    private ScaleOnHover itemSlotScaler;
     
     private void Awake() {
         itemSlot = GetComponent<ItemSlot>();
         inventoryShowOnHover = GetComponentInParent<ShowOnHover>();
-        cursor = GameObject.FindObjectOfType<MouseCursor>();
+        itemSlotScaler = itemSlot.GetComponent<ScaleOnHover>();
+        cursor = FindObjectOfType<MouseCursor>();
         ghost.raycastTarget = false;
         ghost.enabled = false;
     }
@@ -28,6 +30,7 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     public void OnBeginDrag(PointerEventData eventData) {
         ghost.sprite = itemSlot.GetContent().icon;
         ghost.transform.position = transform.position;
+        ghost.rectTransform.localScale = Vector3.one;
         itemSlotPosition = itemSlot.transform.position;
         ghost.enabled = true;
         cursor.ChangeStyle(CursorStyle.Grab);
@@ -41,8 +44,25 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
     public void OnEndDrag(PointerEventData eventData) {
         cursor.lockStyle = false;
-        var ghostRect = ghost.GetComponent<RectTransform>();
+        ReturnToOrigin();
+        ReturnToOriginalSize();
+    }
+
+    private void ReturnToOrigin() { 
+        var ghostRect = ghost.rectTransform;
         ghostRect.DOMove(itemSlotPosition, returnAnimDuration, true).OnComplete(HideGhost);
+    }
+
+    private void ReturnToOriginalSize() {
+        /* the item dragged is always increased in size because of the itemSlotScaler
+         if we snap the item back into its original position we have to make sure that it is not scaled as if
+         we would hover it. so we have to scale it down by the amount the itemSlotScaler did scale it up
+         */
+        var ghostRect = ghost.rectTransform;
+        var ghostScale = ghostRect.localScale;
+        var increasedSize = itemSlotScaler.scaleOnHover;
+        var originalSize = new Vector2(ghostScale.x / increasedSize.x, ghostScale.y / increasedSize.y);
+        ghostRect.DOScale(originalSize, returnAnimDuration);
     }
 
     public void HideGhost() {
