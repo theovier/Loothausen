@@ -9,12 +9,18 @@ public class Inventory : MonoBehaviour, IItemContainer {
     private ShiftableCutoutList<Item> cutoutList;
     private Button nextButton;
     private Button previousButton;
+    private ItemHighlight highlighter;
 
     private void OnValidate() {
         GetComponentsInChildren(true, itemSlots);
+        InitHighlighter();
         InitButtons();
         InitShiftableCutoutList();
         AddActionListenersToButtons();
+    }
+
+    private void InitHighlighter() {
+        highlighter = FindObjectOfType<ItemHighlight>();
     }
     
     private void InitButtons() {
@@ -35,6 +41,7 @@ public class Inventory : MonoBehaviour, IItemContainer {
     
     public void AddItem(Item item) {
         cutoutList.Add(item);
+        highlighter.Show(item);
     }
 
     public bool RemoveItem(Item item) {
