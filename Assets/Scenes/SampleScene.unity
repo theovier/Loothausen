@@ -7271,6 +7271,21 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8925037550123633288, guid: 020a80391c62dcd4a8611c2065688495,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925037550123633288, guid: 020a80391c62dcd4a8611c2065688495,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925037550123633288, guid: 020a80391c62dcd4a8611c2065688495,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8925037548850008220, guid: 020a80391c62dcd4a8611c2065688495,
         type: 3}
       propertyPath: m_Material
@@ -7280,6 +7295,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_sharedMaterial
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925037549497849926, guid: 020a80391c62dcd4a8611c2065688495,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925037549497849926, guid: 020a80391c62dcd4a8611c2065688495,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 8925037550012474378, guid: 020a80391c62dcd4a8611c2065688495,
         type: 3}
