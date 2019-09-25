@@ -13,10 +13,10 @@ public class ScaleOnHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     }
     
     public void OnPointerEnter(PointerEventData eventData) {
-        rectTransform.DOScale(new Vector3(scaleOnHover.x, scaleOnHover.y, 0), scaleDurationOnHover).SetAutoKill(false);
+        rectTransform.DOScale(new Vector3(scaleOnHover.x, scaleOnHover.y, 0), scaleDurationOnHover);
     }
 
     public void OnPointerExit(PointerEventData eventData) {
-        rectTransform.DOPlayBackwards();
+        rectTransform.DOScale(Vector3.one, scaleDurationOnHover);
     }
 }
