@@ -12,7 +12,6 @@ public class PlayerMovement : MonoBehaviour {
 
     private Vector2 movementDirection;
     private Vector2 velocity;
-    private Vector2 additionalVelocity; //set e.g. by attacking / dashing.
     private bool faceLeft;
     
     private void Awake() {
@@ -36,7 +35,7 @@ public class PlayerMovement : MonoBehaviour {
     }
     
     private void Move() {
-        velocity = (movementDirection.normalized + additionalVelocity) * speed;
+        velocity = movementDirection.normalized * speed;
         rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
     }
 
@@ -50,17 +49,4 @@ public class PlayerMovement : MonoBehaviour {
             transform.eulerAngles = new Vector3(0,0,0);
         }
     }
-     
-    public void AddVelocity(Vector2 addition, float delay) {
-        additionalVelocity = addition;
-        if (faceLeft) {
-            additionalVelocity *= -1;
-        }
-        StartCoroutine(ResetAdditionVelocity(delay));
-    }
-
-    private IEnumerator ResetAdditionVelocity(float delay) {
-        yield return new WaitForSeconds(delay);
-        additionalVelocity = new Vector2(0, 0);
-    }    
 }
