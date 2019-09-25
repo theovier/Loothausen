@@ -4,47 +4,43 @@ using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
 
 public class PlayerMovement : MonoBehaviour {
-
-    public float speed;
-  
-    private Animator animator;
-    private Rigidbody2D rb;
-
-    private Vector2 movementDirection;
-    private Vector2 velocity;
-    private bool faceLeft;
     
+    public float speed;
+    
+    //set by the waypoint controller
+    [HideInInspector]public Transform current_waypoint;
+
+    private Animator animator;
+    private bool faceLeft;
+
     private void Awake() {
         animator = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
+        current_waypoint = transform;
     }
     
     private void FixedUpdate() {
-        HandleInput();
         Animate();
         Move();
         Turn();
     }
 
-    private void HandleInput() {
-        movementDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+    private void Animate() {
+        animator.SetBool("isRunning", !CurrentWaypointReached());
     }
 
-    private void Animate() {
-        animator.SetBool("isRunning", movementDirection != Vector2.zero);
+    private bool CurrentWaypointReached() {
+        return transform.position == current_waypoint.position;
     }
     
     private void Move() {
-        velocity = movementDirection.normalized * speed;
-        rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, current_waypoint.position, speed * Time.fixedDeltaTime);
     }
 
     private void Turn() {
-        if (movementDirection.x < 0) {
+        if (current_waypoint.position.x < transform.position.x) {
             faceLeft = true;
             transform.eulerAngles = new Vector3(0, 180, 0);
-        }
-        else if (movementDirection.x > 0){
+        } else if (current_waypoint.position.x > 0) {
             faceLeft = false;
             transform.eulerAngles = new Vector3(0,0,0);
         }
