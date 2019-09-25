@@ -1280,7 +1280,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 4.85
   m_canvasRenderer: {fileID: 409641327}
   m_TextComponent: {fileID: 1416936314}
   m_materialReferenceIndex: 1
@@ -1622,6 +1622,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 424756e18279fa14d97ec76900023e27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemNameTextfield: {fileID: 1921477044}
+  itemIcon: {fileID: 42240948}
+  rays: {fileID: 1289363124}
   fadeInDuration: 0.25
   stayInFocusDuration: 1.5
   fadeOutDuration: 0.5
@@ -4285,6 +4288,7 @@ GameObject:
   - component: {fileID: 1289363121}
   - component: {fileID: 1289363123}
   - component: {fileID: 1289363122}
+  - component: {fileID: 1289363124}
   m_Layer: 5
   m_Name: Rays
   m_TagString: Untagged
@@ -4347,6 +4351,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1289363120}
   m_CullTransparentMesh: 0
+--- !u!114 &1289363124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289363120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f2041f0571e0c149ae2646b556b6d92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  durationForOneRotation: 30
 --- !u!114 &1339204642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4853,7 +4870,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 4.85
   m_canvasRenderer: {fileID: 1574229497}
   m_TextComponent: {fileID: 1921477044}
   m_materialReferenceIndex: 1
