@@ -5,13 +5,13 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ItemHighlight : MonoBehaviour {
-
+    
     public TextMeshProUGUI itemNameTextfield;
+    public Transform itemInfoTransform;
     public Image itemIcon;
-    public UIRotation rays;
-    public float fadeInDuration = 0.25f;
-    public float stayInFocusDuration = 1.5f;
-    public float fadeOutDuration = .5f;
+    public float fadeInDuration = 1f;
+    public float stayInFocusDuration = 2.5f;
+    public float fadeOutDuration = 1f;
     
     private CanvasGroup canvasGroup;
     private UIFader fade;
@@ -27,8 +27,7 @@ public class ItemHighlight : MonoBehaviour {
         itemIcon.sprite = item.icon;
         itemNameTextfield.text = item.itemName;
         FadeIn();
-        ScaleUpAnimation();
-        PlayRayRotation();
+        PlayScaleUpAnimation();
         StartCoroutine(WaitThenFadeOut());
     }
 
@@ -42,28 +41,19 @@ public class ItemHighlight : MonoBehaviour {
     }
 
     private void FadeOut() {
-        fade.FadeOut(fadeOutDuration);
+        fade.FadeOut(fadeOutDuration, Hide);
     }
 
-    private void ScaleUpAnimation() {
-        transform.DOScale(Vector3.one, fadeInDuration);
-    }
-
-    private void PlayRayRotation() {
-        rays.Play();
-    }
-
-    private void StopRayRotation() {
-        rays.Stop();
+    private void PlayScaleUpAnimation() {
+        itemInfoTransform.DOScale(Vector3.one, fadeInDuration);
     }
     
     private void Hide() {
         canvasGroup.alpha = 0;
+        itemInfoTransform.localScale = new Vector2(0.25f, 0.25f);
     }
 
     public void Reset() {
-        transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
         Hide();
-        StopRayRotation();
     }
 }
