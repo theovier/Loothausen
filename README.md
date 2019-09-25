@@ -9,6 +9,7 @@ Work in progress.
 ## Features
 - Simple dialogue system based on [xNode](https://github.com/Siccity/xNode) 
 - Basic inventory system
+- Point and Click navigation based on [A*](https://arongranberg.com/astar/)
 ## Screenshots
 ![Screenshot_11/08/2019](https://i.ibb.co/zQ1B0k4/screenshot.png)
 
