@@ -1454,6 +1454,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &476262414 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 160867266639183190, guid: 08cffc787b26b214296d562b496b3f6b,
+    type: 3}
+  m_PrefabInstance: {fileID: 160867266525418189}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e1b5f5282b1b5848beafe7c025313a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &483614229 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8925037548921925607, guid: 020a80391c62dcd4a8611c2065688495,
@@ -2066,6 +2078,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 575180561}
+  - component: {fileID: 575180566}
   - component: {fileID: 575180560}
   - component: {fileID: 575180559}
   - component: {fileID: 575180563}
@@ -2234,6 +2247,20 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
+--- !u!114 &575180566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575180558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f19742e479089c40bec80a0ce442fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement: {fileID: 575180559}
+  inventory: {fileID: 476262414}
 --- !u!1 &582533100
 GameObject:
   m_ObjectHideFlags: 0
@@ -5304,7 +5331,6 @@ MonoBehaviour:
   choicebox: {fileID: 1214235131}
   displayName: {fileID: 1339204642}
   fallbackChatDisplayTime: 3
-  playerMovement: {fileID: 575180559}
 --- !u!4 &1749271343
 Transform:
   m_ObjectHideFlags: 0

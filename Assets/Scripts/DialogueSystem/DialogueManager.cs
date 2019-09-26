@@ -16,9 +16,7 @@ public class DialogueManager : MonoBehaviour {
     
     private Coroutine scheduledChatSkip;
     private int audioID; //needed to stop dialogue audio when skipping dialogues
-
-    public PlayerMovement playerMovement;
-
+    
     private static DialogueManager instance;
     public static DialogueManager Instance => instance;
 
@@ -38,7 +36,7 @@ public class DialogueManager : MonoBehaviour {
     }
 
     private IEnumerator StartDialogueWhenPlayerStandsStill(DialogueGraph dialogue) {
-        yield return new WaitUntil(() => playerMovement.IsStandingStill());
+        yield return new WaitUntil(() => Player.Instance.movement.IsStandingStill());
         active = true;
         dialogueGraph = dialogue;
         dialogueGraph.Restart();
