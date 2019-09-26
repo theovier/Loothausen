@@ -5304,6 +5304,7 @@ MonoBehaviour:
   choicebox: {fileID: 1214235131}
   displayName: {fileID: 1339204642}
   fallbackChatDisplayTime: 3
+  playerMovement: {fileID: 575180559}
 --- !u!4 &1749271343
 Transform:
   m_ObjectHideFlags: 0

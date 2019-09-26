@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
 using Pathfinding;
 using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
@@ -65,5 +64,9 @@ public class PlayerMovement : MonoBehaviour {
             faceLeft = false;
             transform.eulerAngles = new Vector3(0,0,0);
         }
+    }
+
+    public bool IsStandingStill() {
+        return aiPath.reachedDestination;
     }
 }
