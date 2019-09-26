@@ -71,6 +71,7 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     public void MoveTo(Transform position) {
+        if (Player.Instance.IsInteracting) return;
         target = position;
     }
 
