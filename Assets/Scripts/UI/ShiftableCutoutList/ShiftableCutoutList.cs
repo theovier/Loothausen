@@ -135,6 +135,7 @@ public class ShiftableCutoutList<T> : IShiftableCutoutList<T> {
     public void Clear() {
         wrappers.ForEach(wrapper => wrapper.Clear());
         items.Clear();
+        timesNextPressed = 0;
         DisableControls();
     }
 
