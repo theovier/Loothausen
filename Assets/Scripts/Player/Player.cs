@@ -4,6 +4,8 @@ public class Player : MonoBehaviour {
 
     public PlayerMovement movement;
     public Inventory inventory;
+
+    public bool IsInteracting; //true if the player currently has an open dialogue
     
     private static Player instance;
     public static Player Instance => instance;
@@ -17,6 +19,8 @@ public class Player : MonoBehaviour {
             instance = this;
         }
     }
+    
+    
 
 
 }

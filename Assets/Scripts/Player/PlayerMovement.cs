@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour {
     }
     
     private void HandleInput() {
-        if (Input.GetMouseButtonDown(0)) {
+        if (Input.GetMouseButtonDown(0) && IsStandingStill() && !Player.Instance.IsInteracting) {
             var clickedPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
             SelectClosestLocation(clickedPosition);
         }
@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour {
     private void SelectClosestLocation(Vector3 pos) {
         var closestLocation = locations.OrderBy(t => (t.position - pos).sqrMagnitude)
             .First();
-        target = closestLocation;
+        MoveTo(closestLocation);
     }
 
     private void Animate() {
@@ -68,5 +68,13 @@ public class PlayerMovement : MonoBehaviour {
 
     public bool IsStandingStill() {
         return aiPath.reachedDestination;
+    }
+
+    public void MoveTo(Transform position) {
+        target = position;
+    }
+
+    public bool HasReachedPosition(Transform position) {
+        return aiPath.reachedDestination && aiPath.destination == position.position;
     }
 }

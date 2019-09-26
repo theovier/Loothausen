@@ -32,12 +32,8 @@ public class DialogueManager : MonoBehaviour {
 
     public void StartDialogue(DialogueGraph dialogue) {
         if (active) return;
-        StartCoroutine(StartDialogueWhenPlayerStandsStill(dialogue));
-    }
-
-    private IEnumerator StartDialogueWhenPlayerStandsStill(DialogueGraph dialogue) {
-        yield return new WaitUntil(() => Player.Instance.movement.IsStandingStill());
         active = true;
+        Player.Instance.IsInteracting = true;
         dialogueGraph = dialogue;
         dialogueGraph.Restart();
         choicebox.Reset();
@@ -47,6 +43,7 @@ public class DialogueManager : MonoBehaviour {
     
     private void EndDialogue() {
         active = false;
+        Player.Instance.IsInteracting = false;
         chatbox.Hide();
         choicebox.Reset();
     }

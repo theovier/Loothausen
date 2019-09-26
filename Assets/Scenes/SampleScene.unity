@@ -665,6 +665,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversation: {fileID: 11400000, guid: 957526b5d6a6a8340a8a24faf7e47197, type: 2}
+  standpoint: {fileID: 1562754491}
 --- !u!114 &264424667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1522,6 +1523,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversation: {fileID: 11400000, guid: 34dda4d1f305f9c44ad2229380e81b1e, type: 2}
+  standpoint: {fileID: 1562754491}
 --- !u!61 &508180372
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2261,6 +2263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movement: {fileID: 575180559}
   inventory: {fileID: 476262414}
+  IsInteracting: 0
 --- !u!1 &582533100
 GameObject:
   m_ObjectHideFlags: 0
@@ -2378,6 +2381,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversation: {fileID: 11400000, guid: df0aec8e76c85144eaa26d4ff3d00b49, type: 2}
+  standpoint: {fileID: 347451974}
 --- !u!61 &612807849
 BoxCollider2D:
   m_ObjectHideFlags: 0
