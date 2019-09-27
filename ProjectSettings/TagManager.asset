@@ -9,6 +9,7 @@ TagManager:
   - TooltipBox
   - Inventory
   - Grab
+  - Hint
   layers:
   - Default
   - TransparentFX
