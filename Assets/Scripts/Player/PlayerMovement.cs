@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour {
     }
     
     private void HandleInput() {
-        if (Input.GetMouseButtonDown(0) && IsStandingStill() && !Player.Instance.IsInteracting) {
+        if (Input.GetMouseButtonDown(0) && IsStandingStill() && Player.Instance.IsAllowedToMove()) {
             var clickedPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
             SelectClosestLocation(clickedPosition);
         }

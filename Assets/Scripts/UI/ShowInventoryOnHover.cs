@@ -21,11 +21,13 @@ public class ShowInventoryOnHover : MonoBehaviour, IPointerEnterHandler, IPointe
 
     public void OnPointerEnter(PointerEventData eventData) {
         cursorInside = true;
+        Player.Instance.HasInventoryOpened = true;
         ShowInventoryBar();
     }
 
     public void OnPointerExit(PointerEventData eventData) {
         cursorInside = false;
+        Player.Instance.HasInventoryOpened = false;
         if (visibilityLock) return;
         HideInventoryBar();
     }

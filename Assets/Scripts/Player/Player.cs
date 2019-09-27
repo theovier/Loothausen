@@ -6,6 +6,7 @@ public class Player : MonoBehaviour {
     public Inventory inventory;
 
     public bool IsInteracting; //true if the player currently has an open dialogue
+    public bool HasInventoryOpened; //true if the cursor is inside the inventory menu
     
     private static Player instance;
     public static Player Instance => instance;
@@ -18,6 +19,10 @@ public class Player : MonoBehaviour {
         else {
             instance = this;
         }
+    }
+
+    public bool IsAllowedToMove() {
+        return !IsInteracting && !HasInventoryOpened;
     }
     
     
