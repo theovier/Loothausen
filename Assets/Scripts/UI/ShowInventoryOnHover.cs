@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ShowOnHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
+public class ShowInventoryOnHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
 
     public RectTransform inventoryBar;
     public float fadeAnimDuration = 0.25f;

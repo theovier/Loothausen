@@ -15,12 +15,12 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     private RectTransform rect;
     private MouseCursor cursor;
 
-    private ShowOnHover inventoryShowOnHover;
+    private ShowInventoryOnHover inventoryShowInventoryOnHover;
     private ScaleOnHover itemSlotScaler;
     
     private void Awake() {
         itemSlot = GetComponent<ItemSlot>();
-        inventoryShowOnHover = GetComponentInParent<ShowOnHover>();
+        inventoryShowInventoryOnHover = GetComponentInParent<ShowInventoryOnHover>();
         itemSlotScaler = itemSlot.GetComponent<ScaleOnHover>();
         cursor = FindObjectOfType<MouseCursor>();
         ghost.raycastTarget = false;
@@ -35,7 +35,7 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         ghost.enabled = true;
         cursor.ChangeStyle(CursorStyle.Grab);
         cursor.lockStyle = true;
-        inventoryShowOnHover.Lock();
+        inventoryShowInventoryOnHover.Lock();
     }
 
     public void OnDrag(PointerEventData eventData) {
@@ -67,6 +67,6 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
     public void HideGhost() {
         ghost.enabled = false;
-        inventoryShowOnHover.Unlock();
+        inventoryShowInventoryOnHover.Unlock();
     }
 }
