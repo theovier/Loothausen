@@ -5,7 +5,7 @@ public class Hint : MonoBehaviour {
     private SpriteRenderer spriteRenderer;
     private SpriteFader fader;
     
-    private void Start() {
+    private void Awake() {
         spriteRenderer = GetComponent<SpriteRenderer>();
         fader = gameObject.AddComponent<SpriteFader>();
         fader.spriteRenderer = spriteRenderer;
