@@ -5,23 +5,23 @@ using UnityEngine;
 //TODO: Make this more generic, so the UIFader can be merged with this.
 public class SpriteFader : MonoBehaviour {
 
-    public SpriteRenderer renderer;
+    public SpriteRenderer spriteRenderer;
     public delegate void OnCompletion();
     
     public void FadeIn(float duration) {
-        StartCoroutine(FadeSprite(renderer, renderer.color.a, 1, duration));
+        StartCoroutine(FadeSprite(spriteRenderer, spriteRenderer.color.a, 1, duration));
     }
     
     public void FadeIn(float duration, OnCompletion onCompletion) {
-        StartCoroutine(FadeSprite(renderer, renderer.color.a, 1, duration, onCompletion));
+        StartCoroutine(FadeSprite(spriteRenderer, spriteRenderer.color.a, 1, duration, onCompletion));
     }
     
     public void FadeOut(float duration) {
-        StartCoroutine(FadeSprite(renderer, renderer.color.a, 0, duration));
+        StartCoroutine(FadeSprite(spriteRenderer, spriteRenderer.color.a, 0, duration));
     }
     
     public void FadeOut(float duration, OnCompletion onCompletion) {
-        StartCoroutine(FadeSprite(renderer, renderer.color.a, 0, duration, onCompletion));
+        StartCoroutine(FadeSprite(spriteRenderer, spriteRenderer.color.a, 0, duration, onCompletion));
     }
 
     public void Stop() {

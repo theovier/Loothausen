@@ -2,13 +2,13 @@
 
 public class Hint : MonoBehaviour {
 
-    private SpriteRenderer renderer;
+    private SpriteRenderer spriteRenderer;
     private SpriteFader fader;
     
     private void Start() {
-        renderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         fader = gameObject.AddComponent<SpriteFader>();
-        fader.renderer = renderer;
+        fader.spriteRenderer = spriteRenderer;
     }
 
     public void FadeIn(float duration) {
@@ -23,8 +23,8 @@ public class Hint : MonoBehaviour {
 
     public void Hide() {
         fader.Stop();
-        var color = renderer.color;
+        var color = spriteRenderer.color;
         color.a = 0;
-        renderer.color = color;
+        spriteRenderer.color = color;
     }
 }
