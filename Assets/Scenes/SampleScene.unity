@@ -855,6 +855,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &338442579 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1338726097, guid: 82efea88e3f48f64d9750d20e881a96c,
+    type: 3}
+  m_PrefabInstance: {fileID: 8118028644852808927}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &338442582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338442579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a682e7b720d027d4c96781927eaa2699, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &339124417
 GameObject:
   m_ObjectHideFlags: 0
@@ -2219,6 +2237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6feb43ea3877836469ebea9b2c954311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeTilFullyVisible: 5
 --- !u!1 &582533100
 GameObject:
   m_ObjectHideFlags: 0
@@ -3264,6 +3283,24 @@ Transform:
   m_Father: {fileID: 746179536}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &909642725 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 768118261300565445, guid: 08ce23dbd30e2ef408c6aa0ebe0b06b0,
+    type: 3}
+  m_PrefabInstance: {fileID: 4466275961045542068}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &909642728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909642725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a682e7b720d027d4c96781927eaa2699, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &920586820
 GameObject:
   m_ObjectHideFlags: 0
@@ -3550,6 +3587,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1042460982}
   - component: {fileID: 1042460983}
+  - component: {fileID: 1042460984}
   m_Layer: 9
   m_Name: Hint
   m_TagString: Hint
@@ -3611,7 +3649,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: -4746857229868855482, guid: 9e453bd743dc49949ad4038305519d63,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.27193895, b: 0.19339621, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3621,6 +3659,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1042460984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1042460981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a682e7b720d027d4c96781927eaa2699, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1068675902
 GameObject:
   m_ObjectHideFlags: 0
@@ -6750,6 +6800,16 @@ PrefabInstance:
       propertyPath: controller
       value: 
       objectReference: {fileID: 1339204642}
+    - target: {fileID: 1973820209300448273, guid: 08ce23dbd30e2ef408c6aa0ebe0b06b0,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.27193895
+      objectReference: {fileID: 0}
+    - target: {fileID: 1973820209300448273, guid: 08ce23dbd30e2ef408c6aa0ebe0b06b0,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.19339621
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08ce23dbd30e2ef408c6aa0ebe0b06b0, type: 3}
 --- !u!1001 &7270569546602953091
@@ -6961,6 +7021,14 @@ PrefabInstance:
       propertyPath: controller
       value: 
       objectReference: {fileID: 1339204642}
+    - target: {fileID: 1338726099, guid: 82efea88e3f48f64d9750d20e881a96c, type: 3}
+      propertyPath: m_Color.g
+      value: 0.27193895
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338726099, guid: 82efea88e3f48f64d9750d20e881a96c, type: 3}
+      propertyPath: m_Color.b
+      value: 0.19339621
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82efea88e3f48f64d9750d20e881a96c, type: 3}
 --- !u!1001 &8438391015514386810

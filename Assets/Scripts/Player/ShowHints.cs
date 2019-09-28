@@ -1,32 +1,48 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class ShowHints : MonoBehaviour {
 
-    private GameObject[] hints;
+    public float timeTilFullyVisible = 5.0f;
+    private Hint[] hints;
+
+    private float timeButtonPressed;
+    private float startButtonPressedTime;
+    private bool buttonPressed;
     
-    private void Start() { 
-        hints = GameObject.FindGameObjectsWithTag("Hint");
+    private void Start() {
+        hints = FindObjectsOfType<Hint>();
         HideHints();
     }
 
     private void Update() {
-        if (Input.GetButtonDown("ShowHints")) {
-            HighlightHints();    
+        if (Input.GetButtonDown("ShowHints") && !buttonPressed) {
+            startButtonPressedTime = Time.time;
+            HighlightHints();
+            buttonPressed = true;
         }
         else if (Input.GetButtonUp("ShowHints")) {
-            HideHints();
+            timeButtonPressed = Math.Min(Time.time - startButtonPressedTime, timeTilFullyVisible);
+            FadeOutHints();
+            buttonPressed = false;
         }
     }
     
     private void HighlightHints() {
         foreach (var hint in hints) {
-            hint.SetActive(true);
+            hint.FadeIn(timeTilFullyVisible);
+        }
+    }
+    
+    private void FadeOutHints() {
+        foreach (var hint in hints) {
+            hint.FadeOut(timeButtonPressed);
         }
     }
     
     private void HideHints() {
         foreach (var hint in hints) {
-            hint.SetActive(false);
+            hint.Hide();
         }
     }
 }
