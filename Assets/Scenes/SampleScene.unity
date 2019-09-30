@@ -2837,6 +2837,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4605464780604742858, guid: 9cea7a497a41d9749bf8a13e9cadd18d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Chat
+      objectReference: {fileID: 0}
     - target: {fileID: 4605464780604742859, guid: 9cea7a497a41d9749bf8a13e9cadd18d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5969,6 +5974,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2837271559350685421, guid: e104bce8c36ea904b8549a89b978a495,
+        type: 3}
+      propertyPath: m_TagString
+      value: Chat
+      objectReference: {fileID: 0}
     - target: {fileID: 8382916028511411723, guid: e104bce8c36ea904b8549a89b978a495,
         type: 3}
       propertyPath: m_Enabled
@@ -6632,6 +6642,11 @@ PrefabInstance:
         type: 3}
       propertyPath: returnAnimDuration
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 160867267615036450, guid: 08cffc787b26b214296d562b496b3f6b,
+        type: 3}
+      propertyPath: m_BlocksRaycasts
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08cffc787b26b214296d562b496b3f6b, type: 3}
@@ -7394,6 +7409,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: a76fcc311692fb841930f700eebfb40b,
         type: 3}
+    - target: {fileID: 8438391015647744610, guid: d8ebec1ad59fca94695211f2ca70e8c3,
+        type: 3}
+      propertyPath: gr
+      value: 
+      objectReference: {fileID: 732373356}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8ebec1ad59fca94695211f2ca70e8c3, type: 3}
 --- !u!224 &8438391015514386811 stripped

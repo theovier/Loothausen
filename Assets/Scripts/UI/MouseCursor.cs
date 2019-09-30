@@ -1,29 +1,34 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class MouseCursor : MonoBehaviour {
+
+    public GraphicRaycaster gr;
 
     public Sprite defaultCursor;
     public Sprite talkCursor;
     public Sprite inspectCursor;
     public Sprite grabCursor;
-    
+
     public Vector2 defaultCursorScale = new Vector2(13, 17);
     public Vector2 defaultCursorRotation = new Vector2(0, 20);
-    
+
     public Vector2 talkCursorScale = new Vector2(17, 15);
     public Vector2 talkCursorRotation;
-    
+
     public Vector2 inspectCursorScale = new Vector2(13, 13);
     public Vector2 inspectCursorRotation;
-    
+
     public Vector2 grabCursorScale = new Vector2(13, 13);
     public Vector2 grabCursorRotation;
-    
+
     public LayerMask layerMask;
 
     public bool lockStyle;
-    
+
     private Image current;
     private RectTransform rectTransform;
     private CursorStyle currentStyle;
@@ -39,30 +44,45 @@ public class MouseCursor : MonoBehaviour {
         Cursor.visible = false;
         ChangeStyle(CursorStyle.Normal);
     }
-    
+
     private void Update() {
         UpdateCursorPosition();
         UpdateCursorStyle();
     }
-
+    
     private void UpdateCursorPosition() {
         transform.position = Input.mousePosition;
     }
 
     private void UpdateCursorStyle() {
-        var hit = RaycastFromMouse();
+        var hit = PhysicsRaycastFromMouse();
         //let the raycast happen first because it may trigger events
-        if (lockStyle) return; 
-        if (hit) {
+        if (lockStyle) return;
+        if (IsCursorOverChatUI()) {
+            ChangeStyle(CursorStyle.Normal);
+        }
+        else if (hit) {
             ChangeStyle(hit.collider.tag);
         } else {
             ChangeStyle(CursorStyle.Normal);
         }
     }
 
-    private RaycastHit2D RaycastFromMouse() {
+    private RaycastHit2D PhysicsRaycastFromMouse() {
         var ray = mainCamera.ScreenPointToRay(Input.mousePosition); 
         return Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity, layerMask);
+    }
+    
+    private bool IsCursorOverChatUI() {
+        return GraphicRaycast().Any(hit => hit.gameObject.tag.Equals("Chat"));
+    }
+
+    private List<RaycastResult> GraphicRaycast() {
+        var ped = new PointerEventData(null);
+        ped.position = Input.mousePosition;
+        var results = new List<RaycastResult>();
+        gr.Raycast(ped, results);
+        return results;
     }
     
     private void OnApplicationFocus(bool focusStatus) {
