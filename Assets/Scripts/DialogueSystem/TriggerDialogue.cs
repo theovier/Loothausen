@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using Dialogue;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class TriggerDialogue : MonoBehaviour {
+public class TriggerDialogue : MonoBehaviour, IPointerClickHandler {
     
     public DialogueGraph conversation;
     public Transform standpoint;
     public MovementDirection faceDirection;
     
-    private void OnMouseUpAsButton() {
+    public void OnPointerClick(PointerEventData eventData) {
         Player.Instance.movement.MoveTo(standpoint);
         StartCoroutine(StartConversation());
     }
