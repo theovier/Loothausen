@@ -1,18 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 
 public class NameDisplayController : MonoBehaviour {
-
-    public TextMeshProUGUI textField;
-    public UIFader fader;
+    
     public float fadeInDuration = 0.1f;
     public float fadeOutDuration = 0.1f;
     
+    private TextMeshProUGUI textField;
+    private UIFader fader;
     private bool hidden;
     
     private void Start() {
+        textField = GetComponent<TextMeshProUGUI>();
+        fader = gameObject.AddComponent<UIFader>();
+        fader.uiElement = GetComponent<CanvasGroup>();
         gameObject.SetActive(false);
     }
     
