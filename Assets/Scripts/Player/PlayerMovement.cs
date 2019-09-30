@@ -57,12 +57,37 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     private void Turn() {
+        if (IsStandingStill()) return;
         if (aiPath.desiredVelocity.x <= -0.01f) {
-            faceLeft = true;
-            transform.eulerAngles = new Vector3(0, 180, 0);
+            TurnLeft();
         } else if (aiPath.desiredVelocity.x >= 0.01f){
-            faceLeft = false;
-            transform.eulerAngles = new Vector3(0,0,0);
+            TurnRight();
+        }
+    }
+    
+    private void TurnLeft() {
+        faceLeft = true;
+        transform.eulerAngles = new Vector3(0, 180, 0);
+    }
+    
+    private void TurnRight() {
+        faceLeft = false;
+        transform.eulerAngles = new Vector3(0,0,0);
+    }
+
+    public void Turn(MovementDirection direction) {
+        switch (direction) {
+            case MovementDirection.LEFT: {
+                TurnLeft();
+                break;
+            }
+            case MovementDirection.RIGHT: {
+                TurnRight();
+                break;
+            }
+            default: {
+                break;
+            }
         }
     }
 
@@ -78,4 +103,6 @@ public class PlayerMovement : MonoBehaviour {
     public bool HasReachedPosition(Transform position) {
         return aiPath.reachedDestination && aiPath.destination == position.position;
     }
+
+
 }

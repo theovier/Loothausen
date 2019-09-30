@@ -697,6 +697,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   conversation: {fileID: 11400000, guid: 957526b5d6a6a8340a8a24faf7e47197, type: 2}
   standpoint: {fileID: 1562754491}
+  faceDirection: 1
 --- !u!114 &264424667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6846,6 +6847,10 @@ PrefabInstance:
       propertyPath: standpoint
       value: 
       objectReference: {fileID: 1562754491}
+    - target: {fileID: 508180371, guid: 08ce23dbd30e2ef408c6aa0ebe0b06b0, type: 3}
+      propertyPath: faceDirection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 508180373, guid: 08ce23dbd30e2ef408c6aa0ebe0b06b0, type: 3}
       propertyPath: controller
       value: 
@@ -6937,6 +6942,10 @@ PrefabInstance:
       propertyPath: standpoint
       value: 
       objectReference: {fileID: 250027446}
+    - target: {fileID: 1778668624, guid: 402ca841d636b674591237ad01bda7aa, type: 3}
+      propertyPath: faceDirection
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 402ca841d636b674591237ad01bda7aa, type: 3}
 --- !u!1001 &7270569546602953091
