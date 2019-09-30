@@ -372,8 +372,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 800197535
+  m_SortingLayer: 1
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 61c884bc349983f47b301ee40e988490, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4307,8 +4307,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbc0e9294cf230142847cb48343723e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textField: {fileID: 127644236803607398}
-  fader: {fileID: 1339204643}
   fadeInDuration: 0.1
   fadeOutDuration: 0.1
 --- !u!114 &1339204643
@@ -6418,18 +6416,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 127644236803607395}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &127644236803607398 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 127644235986677628, guid: 72d1324a3dc4ccb4bbf1ef45d6804b90,
-    type: 3}
-  m_PrefabInstance: {fileID: 127644236803607395}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 127644236803607399}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &127644236803607399 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 127644235986677630, guid: 72d1324a3dc4ccb4bbf1ef45d6804b90,
