@@ -20,6 +20,7 @@ public class NameDisplayController : MonoBehaviour {
     public void DisplayText(string text) {
         gameObject.SetActive(true);
         textField.text = text;
+        fader.StopCurrentFade();
         fader.FadeIn(fadeInDuration);
         hidden = false;
     }

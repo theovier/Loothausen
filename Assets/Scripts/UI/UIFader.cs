@@ -24,6 +24,10 @@ public class UIFader : MonoBehaviour {
         StartCoroutine(FadeCanvasGroup(uiElement, uiElement.alpha, 0, duration, onCompletion));
     }
     
+    public void StopCurrentFade() {
+        StopAllCoroutines();
+    }
+    
     private IEnumerator FadeCanvasGroup(CanvasGroup cg, float start, float end, float lerpTime) {
         float _timeStartedLerping = Time.time;
         float timeSinceStarted = Time.time - _timeStartedLerping;
