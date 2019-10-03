@@ -51,3 +51,6 @@ TagManager:
   - name: Objects
     uniqueID: 800197535
     locked: 0
+  - name: BlockingViewOnPlayer
+    uniqueID: 3611540693
+    locked: 0
