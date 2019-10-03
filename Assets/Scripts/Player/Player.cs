@@ -24,6 +24,12 @@ public class Player : MonoBehaviour {
     public bool IsAllowedToMove() {
         return !IsInteracting && !HasInventoryOpened;
     }
+
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.Mouse2)) {
+            inventory.ToggleUI();
+        }
+    }
     
     
 

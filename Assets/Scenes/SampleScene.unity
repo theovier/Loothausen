@@ -528,6 +528,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1f760258047f8847b42cf3ab229e681, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &247661016 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 160867267615036454, guid: 08cffc787b26b214296d562b496b3f6b,
+    type: 3}
+  m_PrefabInstance: {fileID: 160867266525418189}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &250027445
 GameObject:
   m_ObjectHideFlags: 0
@@ -1676,6 +1682,28 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   m_MaxRayIntersections: 0
+--- !u!1 &525529026 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 160867267232368857, guid: 08cffc787b26b214296d562b496b3f6b,
+    type: 3}
+  m_PrefabInstance: {fileID: 160867266525418189}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &525529031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525529026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df0c16318da27db4e9c8ebeea750d296, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryBar: {fileID: 247661016}
+  fadeAnimDuration: 0.25
+  slideAnimationDuration: 0.5
+  targetPositionY: -125
 --- !u!4 &526461736 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1099101065718847803, guid: 4582ed650ecc05e43993b45acb3b496f,
@@ -6634,7 +6662,8 @@ PrefabInstance:
       propertyPath: m_BlocksRaycasts
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 160867267232368859, guid: 08cffc787b26b214296d562b496b3f6b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 08cffc787b26b214296d562b496b3f6b, type: 3}
 --- !u!1001 &1099101066755704209
 PrefabInstance:

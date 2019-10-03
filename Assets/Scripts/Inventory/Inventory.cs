@@ -10,17 +10,22 @@ public class Inventory : MonoBehaviour, IItemContainer {
     private Button nextButton;
     private Button previousButton;
     private ItemHighlight highlighter;
-
+    private ToggleInventoryUI ui;
+    
     private void OnValidate() {
         GetComponentsInChildren(true, itemSlots);
         InitHighlighter();
+        initUIToggler();
         InitButtons();
         InitShiftableCutoutList();
         AddActionListenersToButtons();
     }
-
     private void InitHighlighter() {
         highlighter = FindObjectOfType<ItemHighlight>();
+    }
+    
+    private void initUIToggler() {
+        ui = GetComponentInChildren<ToggleInventoryUI>();
     }
     
     private void InitButtons() {
@@ -50,5 +55,17 @@ public class Inventory : MonoBehaviour, IItemContainer {
 
     public void Clear() {
         cutoutList.Clear();
+    }
+    
+    public void Show() {
+        ui.ShowInventoryBar();
+    }
+
+    public void Hide() {
+        ui.HideInventoryBar();
+    }
+    
+    public void ToggleUI() {
+        ui.ToggleInventoryBar();
     }
 }

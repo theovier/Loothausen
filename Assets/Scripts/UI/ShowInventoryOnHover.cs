@@ -3,25 +3,25 @@ using UnityEngine.EventSystems;
 
 public class ShowInventoryOnHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
 
-    private ToggleInventory toggleInventory;
+    private ToggleInventoryUI toggleInventoryUi;
     private bool visibilityLock;
     private bool cursorInside;
 
     private void Awake() {
-        toggleInventory = GetComponent<ToggleInventory>();
+        toggleInventoryUi = GetComponent<ToggleInventoryUI>();
     }
 
     public void OnPointerEnter(PointerEventData eventData) {
         cursorInside = true;
         Player.Instance.HasInventoryOpened = true;
-        toggleInventory.ShowInventoryBar();
+        toggleInventoryUi.ShowInventoryBar();
     }
 
     public void OnPointerExit(PointerEventData eventData) {
         cursorInside = false;
         Player.Instance.HasInventoryOpened = false;
         if (visibilityLock) return;
-        toggleInventory.HideInventoryBar();
+        toggleInventoryUi.HideInventoryBar();
     }
     
     public void Lock() {
@@ -31,7 +31,7 @@ public class ShowInventoryOnHover : MonoBehaviour, IPointerEnterHandler, IPointe
     public void Unlock() {
         visibilityLock = false;
         if (!cursorInside) {
-            toggleInventory.HideInventoryBar();
+            toggleInventoryUi.HideInventoryBar();
         }
     }
 }
