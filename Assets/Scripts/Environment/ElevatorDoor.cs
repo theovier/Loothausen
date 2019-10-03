@@ -1,16 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ElevatorDoor : MonoBehaviour {
 
     private Animator animator;
     private bool open;
-    private SpriteRenderer[] doorSpriteRenderer;
 
     private void Start() {
         animator = GetComponent<Animator>();
-        doorSpriteRenderer = GetComponentsInChildren<SpriteRenderer>();
         Open();
     }
 
