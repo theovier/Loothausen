@@ -12,6 +12,7 @@ public class MouseCursor : MonoBehaviour {
     public Sprite talkCursor;
     public Sprite inspectCursor;
     public Sprite grabCursor;
+    public Sprite goCursor;
 
     public Vector2 defaultCursorScale = new Vector2(13, 17);
     public Vector2 defaultCursorRotation = new Vector2(0, 20);
@@ -24,6 +25,9 @@ public class MouseCursor : MonoBehaviour {
 
     public Vector2 grabCursorScale = new Vector2(13, 13);
     public Vector2 grabCursorRotation;
+    
+    public Vector2 goCursorScale = new Vector2(13, 13);
+    public Vector2 goCursorRotation;
 
     public LayerMask layerMask;
 
@@ -105,6 +109,10 @@ public class MouseCursor : MonoBehaviour {
                 ChangeStyle(CursorStyle.Grab);
                 break;
             }
+            case "Go": {
+                ChangeStyle(CursorStyle.Go);
+                break;
+            }
             default: {
                 ChangeStyle(CursorStyle.Normal);
                 break;
@@ -128,6 +136,9 @@ public class MouseCursor : MonoBehaviour {
                 break;
             case CursorStyle.Grab:
                 SetGrabStyle();
+                break;
+            case CursorStyle.Go:
+                SetGoStyle();
                 break;
             default:
                 SetNormalStyle();
@@ -162,6 +173,13 @@ public class MouseCursor : MonoBehaviour {
         rectTransform.localRotation = Quaternion.Euler(0, grabCursorRotation.x, grabCursorRotation.y);
         rectTransform.localScale = new Vector3(grabCursorScale.x, grabCursorScale.y, 0);
     }
+
+    private void SetGoStyle() {
+        currentStyle = CursorStyle.Go;
+        current.sprite = goCursor;
+        rectTransform.localRotation = Quaternion.Euler(0, goCursorRotation.x, goCursorRotation.y);
+        rectTransform.localScale = new Vector3(goCursorScale.x, goCursorScale.y, 0);
+    }
     
 }
 
@@ -169,5 +187,6 @@ public enum CursorStyle {
     Normal,
     Talk,
     Inspect,
-    Grab
+    Grab,
+    Go
 }
