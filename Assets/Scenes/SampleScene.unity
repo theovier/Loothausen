@@ -1590,7 +1590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62812f660652fd04592b6d614671336f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: elevator
+  target: SampleScene
 --- !u!224 &483614229 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8925037548921925607, guid: 020a80391c62dcd4a8611c2065688495,
