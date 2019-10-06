@@ -9,6 +9,7 @@ public class Player : MonoBehaviour {
     public bool HasInventoryOpened; //true if the cursor is inside the inventory menu
     
     private static Player instance;
+    private bool frozen;
     public static Player Instance => instance;
 
     private void Awake() {
@@ -22,7 +23,15 @@ public class Player : MonoBehaviour {
     }
 
     public bool IsAllowedToMove() {
-        return !IsInteracting && !HasInventoryOpened;
+        return !IsInteracting && !HasInventoryOpened && !frozen;
+    }
+
+    public void Freeze() {
+        frozen = true;
+    }
+
+    public void Unfreeze() {
+        frozen = false;
     }
 
     private void Update() {
