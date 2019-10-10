@@ -2,9 +2,14 @@
 using UnityEngine.EventSystems;
 
 public class DisplayName : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
-
-    public NameDisplayController controller;
+    
     public string text;
+    
+    private NameDisplayController controller;
+    
+    private void Start() {
+        controller = FindObjectOfType<NameDisplayController>();
+    }
     
     public void OnPointerEnter(PointerEventData eventData) {
         controller.DisplayText(text);
