@@ -38,6 +38,10 @@ public class MouseCursor : MonoBehaviour {
     private CursorStyle currentStyle;
     private Camera mainCamera;
 
+    //moving the cursor with the analog stick
+    public float speed = 700;
+    private Vector2 aimDirection;
+
     private void Awake() {
         current = GetComponent<Image>();
         rectTransform = GetComponent<RectTransform>();
@@ -53,9 +57,12 @@ public class MouseCursor : MonoBehaviour {
         UpdateCursorPosition();
         UpdateCursorStyle();
     }
-    
+
     private void UpdateCursorPosition() {
-        transform.position = Input.mousePosition;
+        //todo check for gamepad usage
+        aimDirection = new Vector2(Input.GetAxisRaw("RightAnalogStickX"), Input.GetAxisRaw("RightAnalogStickY"));
+        transform.position += (Vector3)aimDirection * speed * Time.deltaTime;
+        //transform.position = Input.mousePosition;
     }
 
     private void UpdateCursorStyle() {
@@ -73,7 +80,7 @@ public class MouseCursor : MonoBehaviour {
     }
 
     private RaycastHit2D PhysicsRaycastFromMouse() {
-        var ray = mainCamera.ScreenPointToRay(Input.mousePosition); 
+        var ray = mainCamera.ScreenPointToRay(transform.position); 
         return Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity, layerMask);
     }
     
