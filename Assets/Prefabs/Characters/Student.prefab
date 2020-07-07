@@ -76,6 +76,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -108,7 +109,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &1590386096
@@ -195,7 +196,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b29e12d220b8fb4faaea423ba29a274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 0}
   text: "Sch\xFCler"
 --- !u!114 &1778668624
 MonoBehaviour:
@@ -257,6 +257,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -281,13 +282,12 @@ SpriteRenderer:
   m_SortingLayerID: 800197535
   m_SortingLayer: 1
   m_SortingOrder: 1
-  m_Sprite: {fileID: -6627097463909404252, guid: defd8a38242a0774091fbb11b6101855,
-    type: 3}
+  m_Sprite: {fileID: 21300004, guid: defd8a38242a0774091fbb11b6101855, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.41, y: 1.15}
+  m_Size: {x: 1.87, y: 1.91}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -407,6 +407,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -431,8 +432,7 @@ SpriteRenderer:
   m_SortingLayerID: 800197535
   m_SortingLayer: 1
   m_SortingOrder: 1
-  m_Sprite: {fileID: -7483694590872631631, guid: defd8a38242a0774091fbb11b6101855,
-    type: 3}
+  m_Sprite: {fileID: 21300004, guid: defd8a38242a0774091fbb11b6101855, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -488,6 +488,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -512,8 +513,7 @@ SpriteRenderer:
   m_SortingLayerID: 800197535
   m_SortingLayer: 1
   m_SortingOrder: 3
-  m_Sprite: {fileID: -2091258001097619612, guid: defd8a38242a0774091fbb11b6101855,
-    type: 3}
+  m_Sprite: {fileID: 21300006, guid: defd8a38242a0774091fbb11b6101855, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -570,6 +570,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -594,8 +595,7 @@ SpriteRenderer:
   m_SortingLayerID: 800197535
   m_SortingLayer: 1
   m_SortingOrder: 2
-  m_Sprite: {fileID: -2184178879884354913, guid: defd8a38242a0774091fbb11b6101855,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: defd8a38242a0774091fbb11b6101855, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

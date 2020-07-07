@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Pathfinding;
 using UnityEngine;
@@ -29,12 +30,15 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        HandleInput();
         Animate();
         Move();
         Turn();
     }
-    
+
+    private void Update() {
+        HandleInput();
+    }
+
     private void HandleInput() {
         if (Input.GetMouseButtonDown(0) && IsStandingStill() && Player.Instance.IsAllowedToMove()) {
             var clickedPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
